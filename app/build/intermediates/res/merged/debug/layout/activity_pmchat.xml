@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_pmchat"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="me.cchiang.lookforthings.PMChatActivity">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Search For a User"
+        android:ems="10"
+        android:layout_marginTop="19dp"
+        android:id="@+id/PM_searchEditText"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/PM_userEmail" />
+
+    <Button
+        android:text="Search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/PM_searchEditText"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/PM_searchButton"
+        android:layout_toEndOf="@+id/PM_searchEditText" />
+
+    <TextView
+        android:text="User's Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PM_userEmail"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/PM_userDisplayName"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="User's Display Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="83dp"
+        android:id="@+id/PM_userDisplayName"
+        android:layout_below="@+id/PM_searchEditText"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Add Friend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PM_userEmail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:id="@+id/PM_addFriendButton" />
+</RelativeLayout>

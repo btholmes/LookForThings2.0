@@ -1,0 +1,483 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:2:1-115:12
+	package
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:3:5-39
+		INJECTED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:5:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:10.0.1] /Users/btholmes/.android/build-cache/3ad93045a9e702a34cec4e22710a2e7b947a4160/output/AndroidManifest.xml:20:5-78
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] /Users/btholmes/.android/build-cache/a4766b20ee9cc53258c965649be1e3a537a0ffc2/output/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:5:22-76
+uses-permission#android.permission.INTERNET
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:6:5-67
+MERGED from [net.gotev:uploadservice:2.1] /Users/btholmes/.android/build-cache/03a44eba26d83564e7be1124dc9672c7f5b110ab/output/AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.gms:play-services-appinvite:10.0.1] /Users/btholmes/.android/build-cache/5ce2c70f1f012003e29ccc96a3c50def248e7698/output/AndroidManifest.xml:18:5-66
+MERGED from [com.google.android.gms:play-services-ads-lite:10.0.1] /Users/btholmes/.android/build-cache/3ad93045a9e702a34cec4e22710a2e7b947a4160/output/AndroidManifest.xml:19:5-66
+MERGED from [com.google.firebase:firebase-crash:10.0.0] /Users/btholmes/.android/build-cache/9ca9072a8e9f49dceb93b03c1ff7f5c14915d9ff/output/AndroidManifest.xml:18:5-66
+MERGED from [com.firebaseui:firebase-ui-database:0.4.0] /Users/btholmes/.android/build-cache/e276234ebf314f65c542c9a2b0916075cd66f57f/output/AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] /Users/btholmes/.android/build-cache/a4766b20ee9cc53258c965649be1e3a537a0ffc2/output/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:6:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:7:5-80
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:7:22-77
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:8:5-71
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:8:22-68
+uses-permission#android.permission.READ_PROFILE
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:9:5-71
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:9:22-68
+application
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:11:5-113:19
+MERGED from [com.android.support:design:25.0.1] /Users/btholmes/.android/build-cache/f1f526ba1766722e1a0ec3e725aa9767ade9f6ea/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:transition:25.0.1] /Users/btholmes/.android/build-cache/db1774e986371118e0da4027c2d6c1c814786174/output/AndroidManifest.xml:22:5-20
+MERGED from [de.hdodenhof:circleimageview:1.3.0] /Users/btholmes/.android/build-cache/112f1333ab489daf41a72d3a9c63bd41bdf55db1/output/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:cardview-v7:25.0.1] /Users/btholmes/.android/build-cache/155740131966694d3022297878d079ecc1bc704c/output/AndroidManifest.xml:22:5-20
+MERGED from [com.balysv:material-ripple:1.0.2] /Users/btholmes/.android/build-cache/a28410b2a6fa5e2739d9515cf6193a0fda335f38/output/AndroidManifest.xml:12:5-20
+MERGED from [com.android.volley:volley:1.0.0] /Users/btholmes/.android/build-cache/b478d0df9b6277ec4306d57eec87b97cdad003a7/output/AndroidManifest.xml:9:5-20
+MERGED from [net.gotev:uploadservice:2.1] /Users/btholmes/.android/build-cache/03a44eba26d83564e7be1124dc9672c7f5b110ab/output/AndroidManifest.xml:15:5-21:19
+MERGED from [com.google.android.gms:play-services-auth:10.0.1] /Users/btholmes/.android/build-cache/619c9b50f74dcf863bb43b5e4ad7fc96747acfb5/output/AndroidManifest.xml:19:5-25:19
+MERGED from [com.google.android.gms:play-services-appinvite:10.0.1] /Users/btholmes/.android/build-cache/5ce2c70f1f012003e29ccc96a3c50def248e7698/output/AndroidManifest.xml:19:5-26:19
+MERGED from [com.google.android.gms:play-services-ads-lite:10.0.1] /Users/btholmes/.android/build-cache/3ad93045a9e702a34cec4e22710a2e7b947a4160/output/AndroidManifest.xml:23:5-27:19
+MERGED from [com.google.android.gms:play-services-clearcut:10.0.1] /Users/btholmes/.android/build-cache/2d60c9cea204a66e5d971601dc2634c978ceae9a/output/AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-gass:10.0.1] /Users/btholmes/.android/build-cache/5eac13472c824cb5d1ac290a5b76d9ae9cd382c3/output/AndroidManifest.xml:4:5-19
+MERGED from [com.google.firebase:firebase-auth:10.0.1] /Users/btholmes/.android/build-cache/05472f360dbfbf85eeeead5707d4faad07950920/output/AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.firebase:firebase-config:10.0.0] /Users/btholmes/.android/build-cache/5c8ca964362f97243d9646e37714210b2d28fff9/output/AndroidManifest.xml:18:5-19
+MERGED from [com.google.firebase:firebase-messaging:10.0.0] /Users/btholmes/.android/build-cache/9028e4bf157dc113cdad1944e6e8e7af1b5bb919/output/AndroidManifest.xml:19:5-29:19
+MERGED from [com.google.firebase:firebase-crash:10.0.0] /Users/btholmes/.android/build-cache/9ca9072a8e9f49dceb93b03c1ff7f5c14915d9ff/output/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-appindexing:10.0.0] /Users/btholmes/.android/build-cache/4e717b915467625c8f0cd2b53436850a3204e9c8/output/AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-base:10.0.1] /Users/btholmes/.android/build-cache/2cf763bddf0af31afc4e4e38163a07c634204bca/output/AndroidManifest.xml:18:5-20:19
+MERGED from [com.facebook.android:facebook-android-sdk:4.7.0] /Users/btholmes/.android/build-cache/ac58e3a92f9f428af375398edd3185b28c40aa06/output/AndroidManifest.xml:28:5-20
+MERGED from [com.android.support:appcompat-v7:25.0.1] /Users/btholmes/.android/build-cache/ae5dca742f376ca667a9cfad6f7ec4cbc5512686/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.0.1] /Users/btholmes/.android/build-cache/6d4fafe75d60a9e369a19e1897d1ef470f8546c2/output/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.0.1] /Users/btholmes/.android/build-cache/54375d92a8fad08ef29c3bf3adf2e17076102b67/output/AndroidManifest.xml:23:5-20
+MERGED from [com.google.firebase:firebase-core:10.0.1] /Users/btholmes/.android/build-cache/6224ae8e58ec274d098a689c5a4f91bb609345f8/output/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:24:5-33:19
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] /Users/btholmes/.android/build-cache/a4766b20ee9cc53258c965649be1e3a537a0ffc2/output/AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:28:5-50:19
+MERGED from [com.google.firebase:firebase-common:10.0.1] /Users/btholmes/.android/build-cache/d0b76f8024e8a2fb55b89396f0327b74a50f7fb5/output/AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /Users/btholmes/.android/build-cache/72d619d7327220948ec875ec0adb48f536527829/output/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] /Users/btholmes/.android/build-cache/69d63c3a363db5ccbd3c6b8e31bbb831dbf93e6f/output/AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.0.1] /Users/btholmes/.android/build-cache/f6fef3fea773afc88dc1be6a14f9fb752d387701/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.0.1] /Users/btholmes/.android/build-cache/6e35e59bda7d0014e4a064731a1d7c6a5377e80f/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.0.1] /Users/btholmes/.android/build-cache/bd3d993f82f009a893d16932bfd06cf7522cb35e/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.0.1] /Users/btholmes/.android/build-cache/707b97aaf45be6d4f8ccb43ad4677aa0d9964d2c/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.0.1] /Users/btholmes/.android/build-cache/6debbcb35d7c1cb675e554f27a007d68ff6a68bc/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.0.1] /Users/btholmes/.android/build-cache/4c9bba9cbd5ceac5451697b025a2126a94ab7f49/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/btholmes/.android/build-cache/40c8f2cb7f7bd59fc5ccc4aaf4a2d34e64c68ac1/output/AndroidManifest.xml:9:5-20
+	android:label
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:14:9-41
+	android:supportsRtl
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:15:9-35
+	android:allowBackup
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:12:9-35
+	android:icon
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:13:9-43
+	android:theme
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:16:9-40
+activity#me.cchiang.lookforthings.ActivitySplash
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:17:9-23:20
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:17:19-49
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:18:13-22:29
+action#android.intent.action.MAIN
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:19:17-69
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:19:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:21:17-77
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:21:27-74
+activity#me.cchiang.lookforthings.ActivityMain
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:24:9-25:20
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:24:19-47
+activity#me.cchiang.lookforthings.ActivityChatDetails
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:26:9-29:20
+	android:label
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:28:13-33
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:27:13-48
+activity#me.cchiang.lookforthings.ActivitySelectFriend
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:30:9-33:20
+	android:label
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:32:13-42
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:31:13-49
+activity#me.cchiang.lookforthings.ActivityFriendDetails
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:34:9-36:20
+	android:label
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:35:13-43
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:34:19-56
+activity#me.cchiang.lookforthings.ActivityGroupDetails
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:37:9-39:20
+	android:label
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:38:13-42
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:37:19-55
+activity#me.cchiang.lookforthings.MainActivity
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:42:9-50
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:42:19-47
+activity#me.cchiang.lookforthings.MainChatActivity
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:43:9-54
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:43:19-51
+activity#me.cchiang.lookforthings.PMChatActivity
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:44:9-52
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:44:19-49
+activity#me.cchiang.lookforthings.GlobalChatActivity
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:45:9-56
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:45:19-53
+activity#me.cchiang.lookforthings.dataCollectionActivity
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:46:9-59
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:46:19-57
+activity#me.cchiang.lookforthings.galleryActivity
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:47:9-62
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:47:19-50
+activity#me.cchiang.lookforthings.gameRoomActivity
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:49:9-52:59
+	android:label
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:51:13-61
+	android:theme
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:52:13-56
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:50:13-45
+activity#me.cchiang.lookforthings.LoginActivity
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:61:9-64:59
+	android:label
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:63:13-57
+	android:theme
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:64:13-56
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:62:13-42
+activity#me.cchiang.lookforthings.SignupActivity
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:65:9-68:59
+	android:label
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:67:13-57
+	android:theme
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:68:13-56
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:66:13-43
+activity#me.cchiang.lookforthings.ResetPasswordActivity
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:69:9-72:59
+	android:label
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:71:13-66
+	android:theme
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:72:13-56
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:70:13-50
+activity#me.cchiang.lookforthings.cameraActivity
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:73:9-76:59
+	android:label
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:75:13-58
+	android:theme
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:76:13-56
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:74:13-43
+activity#com.facebook.FacebookActivity
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:81:9-85:75
+	android:label
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:84:13-45
+	android:configChanges
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:83:13-96
+	android:theme
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:85:13-72
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:82:13-57
+meta-data#com.facebook.sdk.ApplicationId
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:91:9-93:55
+	android:value
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:93:13-52
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:92:13-58
+meta-data#com.google.android.gms.version
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:98:9-100:69
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] /Users/btholmes/.android/build-cache/69d63c3a363db5ccbd3c6b8e31bbb831dbf93e6f/output/AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:100:13-66
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:99:13-58
+activity#me.cchiang.lookforthings.FriendListActivity
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:104:9-56
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:104:19-53
+activity#me.cchiang.lookforthings.SendPMActivity
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:105:9-52
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:105:19-49
+activity#me.cchiang.lookforthings.GameMainActivity
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:106:9-54
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:106:19-51
+activity#me.cchiang.lookforthings.UserProfileActivity
+ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:107:9-66
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml:107:19-54
+uses-sdk
+INJECTED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:design:25.0.1] /Users/btholmes/.android/build-cache/f1f526ba1766722e1a0ec3e725aa9767ade9f6ea/output/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:transition:25.0.1] /Users/btholmes/.android/build-cache/db1774e986371118e0da4027c2d6c1c814786174/output/AndroidManifest.xml:20:5-44
+MERGED from [de.hdodenhof:circleimageview:1.3.0] /Users/btholmes/.android/build-cache/112f1333ab489daf41a72d3a9c63bd41bdf55db1/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:cardview-v7:25.0.1] /Users/btholmes/.android/build-cache/155740131966694d3022297878d079ecc1bc704c/output/AndroidManifest.xml:20:5-43
+MERGED from [com.balysv:material-ripple:1.0.2] /Users/btholmes/.android/build-cache/a28410b2a6fa5e2739d9515cf6193a0fda335f38/output/AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.volley:volley:1.0.0] /Users/btholmes/.android/build-cache/b478d0df9b6277ec4306d57eec87b97cdad003a7/output/AndroidManifest.xml:7:5-43
+MERGED from [com.android.support:multidex:1.0.1] /Users/btholmes/.android/build-cache/93f22cb74e8699907cf5c079268679a32032b9f6/output/AndroidManifest.xml:18:5-42
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.4] /Users/btholmes/.android/build-cache/10441d9863744ebe27014ca0344a7266b580fe4b/output/AndroidManifest.xml:7:5-9:41
+MERGED from [net.gotev:uploadservice:2.1] /Users/btholmes/.android/build-cache/03a44eba26d83564e7be1124dc9672c7f5b110ab/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.gms:play-services-auth:10.0.1] /Users/btholmes/.android/build-cache/619c9b50f74dcf863bb43b5e4ad7fc96747acfb5/output/AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-auth-base:10.0.1] /Users/btholmes/.android/build-cache/6827f20a23bf3e9c69f5e97939ac0d59f4128424/output/AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-appinvite:10.0.1] /Users/btholmes/.android/build-cache/5ce2c70f1f012003e29ccc96a3c50def248e7698/output/AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-ads:10.0.1] /Users/btholmes/.android/build-cache/dc8e7a25eff5e4cb33ded31f17fc9da18170801e/output/AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-ads-lite:10.0.1] /Users/btholmes/.android/build-cache/3ad93045a9e702a34cec4e22710a2e7b947a4160/output/AndroidManifest.xml:22:5-42
+MERGED from [com.google.android.gms:play-services-clearcut:10.0.1] /Users/btholmes/.android/build-cache/2d60c9cea204a66e5d971601dc2634c978ceae9a/output/AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-gass:10.0.1] /Users/btholmes/.android/build-cache/5eac13472c824cb5d1ac290a5b76d9ae9cd382c3/output/AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-auth:10.0.1] /Users/btholmes/.android/build-cache/05472f360dbfbf85eeeead5707d4faad07950920/output/AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-config:10.0.0] /Users/btholmes/.android/build-cache/5c8ca964362f97243d9646e37714210b2d28fff9/output/AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-messaging:10.0.0] /Users/btholmes/.android/build-cache/9028e4bf157dc113cdad1944e6e8e7af1b5bb919/output/AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-crash:10.0.0] /Users/btholmes/.android/build-cache/9ca9072a8e9f49dceb93b03c1ff7f5c14915d9ff/output/AndroidManifest.xml:20:5-42
+MERGED from [com.google.firebase:firebase-appindexing:10.0.0] /Users/btholmes/.android/build-cache/4e717b915467625c8f0cd2b53436850a3204e9c8/output/AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-base:10.0.1] /Users/btholmes/.android/build-cache/2cf763bddf0af31afc4e4e38163a07c634204bca/output/AndroidManifest.xml:17:5-42
+MERGED from [com.facebook.android:facebook-android-sdk:4.7.0] /Users/btholmes/.android/build-cache/ac58e3a92f9f428af375398edd3185b28c40aa06/output/AndroidManifest.xml:24:5-26:41
+MERGED from [com.firebaseui:firebase-ui-database:0.4.0] /Users/btholmes/.android/build-cache/e276234ebf314f65c542c9a2b0916075cd66f57f/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:25.0.1] /Users/btholmes/.android/build-cache/ae5dca742f376ca667a9cfad6f7ec4cbc5512686/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.0.1] /Users/btholmes/.android/build-cache/6d4fafe75d60a9e369a19e1897d1ef470f8546c2/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.0.1] /Users/btholmes/.android/build-cache/54375d92a8fad08ef29c3bf3adf2e17076102b67/output/AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:recyclerview-v7:25.0.1] /Users/btholmes/.android/build-cache/4ce18df9b58fe9f698f9639fb97e876c41c1b045/output/AndroidManifest.xml:20:5-43
+MERGED from [com.google.firebase:firebase-database:10.0.0] /Users/btholmes/.android/build-cache/1e3c3e8ce909f8bc6af7a72eb6264179bd54b7d8/output/AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-database-connection:10.0.0] /Users/btholmes/.android/build-cache/78112308532e252c3ed9cbf1dd5ac2777f155bed/output/AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-core:10.0.1] /Users/btholmes/.android/build-cache/6224ae8e58ec274d098a689c5a4f91bb609345f8/output/AndroidManifest.xml:4:5-42
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] /Users/btholmes/.android/build-cache/a4766b20ee9cc53258c965649be1e3a537a0ffc2/output/AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-common:10.0.1] /Users/btholmes/.android/build-cache/d0b76f8024e8a2fb55b89396f0327b74a50f7fb5/output/AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /Users/btholmes/.android/build-cache/72d619d7327220948ec875ec0adb48f536527829/output/AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] /Users/btholmes/.android/build-cache/69d63c3a363db5ccbd3c6b8e31bbb831dbf93e6f/output/AndroidManifest.xml:17:5-42
+MERGED from [com.android.support:support-v4:25.0.1] /Users/btholmes/.android/build-cache/f6fef3fea773afc88dc1be6a14f9fb752d387701/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.0.1] /Users/btholmes/.android/build-cache/6e35e59bda7d0014e4a064731a1d7c6a5377e80f/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.0.1] /Users/btholmes/.android/build-cache/bd3d993f82f009a893d16932bfd06cf7522cb35e/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.0.1] /Users/btholmes/.android/build-cache/707b97aaf45be6d4f8ccb43ad4677aa0d9964d2c/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.0.1] /Users/btholmes/.android/build-cache/6debbcb35d7c1cb675e554f27a007d68ff6a68bc/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.0.1] /Users/btholmes/.android/build-cache/4c9bba9cbd5ceac5451697b025a2126a94ab7f49/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/btholmes/.android/build-cache/40c8f2cb7f7bd59fc5ccc4aaf4a2d34e64c68ac1/output/AndroidManifest.xml:5:5-7:41
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:25.0.1] /Users/btholmes/.android/build-cache/f1f526ba1766722e1a0ec3e725aa9767ade9f6ea/output/AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [net.gotev:uploadservice:2.1] /Users/btholmes/.android/build-cache/03a44eba26d83564e7be1124dc9672c7f5b110ab/output/AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from [net.gotev:uploadservice:2.1] /Users/btholmes/.android/build-cache/03a44eba26d83564e7be1124dc9672c7f5b110ab/output/AndroidManifest.xml:12:22-78
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [net.gotev:uploadservice:2.1] /Users/btholmes/.android/build-cache/03a44eba26d83564e7be1124dc9672c7f5b110ab/output/AndroidManifest.xml:13:5-68
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] /Users/btholmes/.android/build-cache/a4766b20ee9cc53258c965649be1e3a537a0ffc2/output/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:21:5-67
+	android:name
+		ADDED from [net.gotev:uploadservice:2.1] /Users/btholmes/.android/build-cache/03a44eba26d83564e7be1124dc9672c7f5b110ab/output/AndroidManifest.xml:13:22-65
+service#net.gotev.uploadservice.UploadService
+ADDED from [net.gotev:uploadservice:2.1] /Users/btholmes/.android/build-cache/03a44eba26d83564e7be1124dc9672c7f5b110ab/output/AndroidManifest.xml:16:9-20:19
+	android:enabled
+		ADDED from [net.gotev:uploadservice:2.1] /Users/btholmes/.android/build-cache/03a44eba26d83564e7be1124dc9672c7f5b110ab/output/AndroidManifest.xml:18:13-35
+	android:exported
+		ADDED from [net.gotev:uploadservice:2.1] /Users/btholmes/.android/build-cache/03a44eba26d83564e7be1124dc9672c7f5b110ab/output/AndroidManifest.xml:19:13-36
+	android:name
+		ADDED from [net.gotev:uploadservice:2.1] /Users/btholmes/.android/build-cache/03a44eba26d83564e7be1124dc9672c7f5b110ab/output/AndroidManifest.xml:17:13-65
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:10.0.1] /Users/btholmes/.android/build-cache/619c9b50f74dcf863bb43b5e4ad7fc96747acfb5/output/AndroidManifest.xml:20:9-189
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:10.0.1] /Users/btholmes/.android/build-cache/619c9b50f74dcf863bb43b5e4ad7fc96747acfb5/output/AndroidManifest.xml:20:129-162
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:10.0.1] /Users/btholmes/.android/build-cache/619c9b50f74dcf863bb43b5e4ad7fc96747acfb5/output/AndroidManifest.xml:20:163-187
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:10.0.1] /Users/btholmes/.android/build-cache/619c9b50f74dcf863bb43b5e4ad7fc96747acfb5/output/AndroidManifest.xml:20:69-128
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:10.0.1] /Users/btholmes/.android/build-cache/619c9b50f74dcf863bb43b5e4ad7fc96747acfb5/output/AndroidManifest.xml:20:19-68
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:10.0.1] /Users/btholmes/.android/build-cache/619c9b50f74dcf863bb43b5e4ad7fc96747acfb5/output/AndroidManifest.xml:24:9-184
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:10.0.1] /Users/btholmes/.android/build-cache/619c9b50f74dcf863bb43b5e4ad7fc96747acfb5/output/AndroidManifest.xml:24:64-87
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:10.0.1] /Users/btholmes/.android/build-cache/619c9b50f74dcf863bb43b5e4ad7fc96747acfb5/output/AndroidManifest.xml:24:88-182
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:10.0.1] /Users/btholmes/.android/build-cache/619c9b50f74dcf863bb43b5e4ad7fc96747acfb5/output/AndroidManifest.xml:24:18-63
+activity#com.google.android.gms.appinvite.PreviewActivity
+ADDED from [com.google.android.gms:play-services-appinvite:10.0.1] /Users/btholmes/.android/build-cache/5ce2c70f1f012003e29ccc96a3c50def248e7698/output/AndroidManifest.xml:20:9-25:20
+	android:exported
+		ADDED from [com.google.android.gms:play-services-appinvite:10.0.1] /Users/btholmes/.android/build-cache/5ce2c70f1f012003e29ccc96a3c50def248e7698/output/AndroidManifest.xml:20:51-74
+	android:theme
+		ADDED from [com.google.android.gms:play-services-appinvite:10.0.1] /Users/btholmes/.android/build-cache/5ce2c70f1f012003e29ccc96a3c50def248e7698/output/AndroidManifest.xml:20:75-121
+	android:name
+		ADDED from [com.google.android.gms:play-services-appinvite:10.0.1] /Users/btholmes/.android/build-cache/5ce2c70f1f012003e29ccc96a3c50def248e7698/output/AndroidManifest.xml:20:19-50
+intent-filter#android.intent.category.DEFAULT+com.google.android.gms.appinvite.ACTION_PREVIEW
+ADDED from [com.google.android.gms:play-services-appinvite:10.0.1] /Users/btholmes/.android/build-cache/5ce2c70f1f012003e29ccc96a3c50def248e7698/output/AndroidManifest.xml:21:13-24:29
+action#com.google.android.gms.appinvite.ACTION_PREVIEW
+ADDED from [com.google.android.gms:play-services-appinvite:10.0.1] /Users/btholmes/.android/build-cache/5ce2c70f1f012003e29ccc96a3c50def248e7698/output/AndroidManifest.xml:22:17-89
+	android:name
+		ADDED from [com.google.android.gms:play-services-appinvite:10.0.1] /Users/btholmes/.android/build-cache/5ce2c70f1f012003e29ccc96a3c50def248e7698/output/AndroidManifest.xml:22:25-87
+category#android.intent.category.DEFAULT
+ADDED from [com.google.android.gms:play-services-appinvite:10.0.1] /Users/btholmes/.android/build-cache/5ce2c70f1f012003e29ccc96a3c50def248e7698/output/AndroidManifest.xml:23:17-75
+	android:name
+		ADDED from [com.google.android.gms:play-services-appinvite:10.0.1] /Users/btholmes/.android/build-cache/5ce2c70f1f012003e29ccc96a3c50def248e7698/output/AndroidManifest.xml:23:27-73
+activity#com.google.android.gms.ads.AdActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:10.0.1] /Users/btholmes/.android/build-cache/3ad93045a9e702a34cec4e22710a2e7b947a4160/output/AndroidManifest.xml:25:9-232
+	android:configChanges
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.0.1] /Users/btholmes/.android/build-cache/3ad93045a9e702a34cec4e22710a2e7b947a4160/output/AndroidManifest.xml:25:72-181
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.0.1] /Users/btholmes/.android/build-cache/3ad93045a9e702a34cec4e22710a2e7b947a4160/output/AndroidManifest.xml:25:182-230
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.0.1] /Users/btholmes/.android/build-cache/3ad93045a9e702a34cec4e22710a2e7b947a4160/output/AndroidManifest.xml:25:19-71
+activity#com.google.android.gms.ads.purchase.InAppPurchaseActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:10.0.1] /Users/btholmes/.android/build-cache/3ad93045a9e702a34cec4e22710a2e7b947a4160/output/AndroidManifest.xml:26:9-131
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.0.1] /Users/btholmes/.android/build-cache/3ad93045a9e702a34cec4e22710a2e7b947a4160/output/AndroidManifest.xml:26:92-129
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.0.1] /Users/btholmes/.android/build-cache/3ad93045a9e702a34cec4e22710a2e7b947a4160/output/AndroidManifest.xml:26:19-91
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:10.0.0] /Users/btholmes/.android/build-cache/9028e4bf157dc113cdad1944e6e8e7af1b5bb919/output/AndroidManifest.xml:23:9-27:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:10.0.0] /Users/btholmes/.android/build-cache/9028e4bf157dc113cdad1944e6e8e7af1b5bb919/output/AndroidManifest.xml:23:88-111
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:10.0.0] /Users/btholmes/.android/build-cache/9028e4bf157dc113cdad1944e6e8e7af1b5bb919/output/AndroidManifest.xml:23:18-87
+intent-filter#com.google.firebase.MESSAGING_EVENT
+ADDED from [com.google.firebase:firebase-messaging:10.0.0] /Users/btholmes/.android/build-cache/9028e4bf157dc113cdad1944e6e8e7af1b5bb919/output/AndroidManifest.xml:24:13-26:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-messaging:10.0.0] /Users/btholmes/.android/build-cache/9028e4bf157dc113cdad1944e6e8e7af1b5bb919/output/AndroidManifest.xml:24:28-51
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from [com.google.firebase:firebase-messaging:10.0.0] /Users/btholmes/.android/build-cache/9028e4bf157dc113cdad1944e6e8e7af1b5bb919/output/AndroidManifest.xml:25:17-77
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:10.0.0] /Users/btholmes/.android/build-cache/9028e4bf157dc113cdad1944e6e8e7af1b5bb919/output/AndroidManifest.xml:25:25-75
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:10.0.1] /Users/btholmes/.android/build-cache/2cf763bddf0af31afc4e4e38163a07c634204bca/output/AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] /Users/btholmes/.android/build-cache/2cf763bddf0af31afc4e4e38163a07c634204bca/output/AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] /Users/btholmes/.android/build-cache/2cf763bddf0af31afc4e4e38163a07c634204bca/output/AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] /Users/btholmes/.android/build-cache/2cf763bddf0af31afc4e4e38163a07c634204bca/output/AndroidManifest.xml:19:19-85
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] /Users/btholmes/.android/build-cache/a4766b20ee9cc53258c965649be1e3a537a0ffc2/output/AndroidManifest.xml:25:7-26:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:25:90-112
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:25:113-137
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:25:17-89
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:27:7-31:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:27:162-184
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:27:105-161
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:27:17-104
+intent-filter#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:28:11-30:27
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:29:15-76
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:29:23-74
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:32:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] /Users/btholmes/.android/build-cache/a4766b20ee9cc53258c965649be1e3a537a0ffc2/output/AndroidManifest.xml:27:7-137
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:32:88-110
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:32:111-135
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] /Users/btholmes/.android/build-cache/7b380fa6fb82b955a95fc110b7ffe5f61c332f89/output/AndroidManifest.xml:32:16-87
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:22:5-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:22:22-79
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:24:5-109
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:24:72-107
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:24:17-71
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:26:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:26:22-76
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:30:9-36:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:30:85-108
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:30:109-169
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:30:19-84
+intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE+com.google.android.c2dm.intent.REGISTRATION
+ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:31:13-35:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:32:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:32:25-78
+action#com.google.android.c2dm.intent.REGISTRATION
+ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:33:17-85
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:33:25-83
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:34:17-60
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:34:27-58
+receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
+ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:40:9-119
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:40:93-117
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:40:19-92
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:44:9-48:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:44:83-106
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:44:18-82
+intent-filter#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:45:13-47:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:45:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:46:17-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] /Users/btholmes/.android/build-cache/9b6f51da4090a8045d4b552b4ef1719c963bc361/output/AndroidManifest.xml:46:25-77
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:10.0.1] /Users/btholmes/.android/build-cache/d0b76f8024e8a2fb55b89396f0327b74a50f7fb5/output/AndroidManifest.xml:6:9-194
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:10.0.1] /Users/btholmes/.android/build-cache/d0b76f8024e8a2fb55b89396f0327b74a50f7fb5/output/AndroidManifest.xml:6:19-78
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:10.0.1] /Users/btholmes/.android/build-cache/d0b76f8024e8a2fb55b89396f0327b74a50f7fb5/output/AndroidManifest.xml:6:144-168
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:10.0.1] /Users/btholmes/.android/build-cache/d0b76f8024e8a2fb55b89396f0327b74a50f7fb5/output/AndroidManifest.xml:6:169-192
+	android:name
+		ADDED from [com.google.firebase:firebase-common:10.0.1] /Users/btholmes/.android/build-cache/d0b76f8024e8a2fb55b89396f0327b74a50f7fb5/output/AndroidManifest.xml:6:79-143

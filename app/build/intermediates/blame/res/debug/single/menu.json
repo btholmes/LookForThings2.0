@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/menu/menu_group_details.xml",
+        "source": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/res/menu/menu_group_details.xml"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/menu/menu_drawer.xml",
+        "source": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/res/menu/menu_drawer.xml"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/menu/menu_search_toolbar.xml",
+        "source": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/res/menu/menu_search_toolbar.xml"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
+        "source": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/res/menu/menu_main.xml"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/menu/menu_new_chat.xml",
+        "source": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/res/menu/menu_new_chat.xml"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/menu/main_menu.xml",
+        "source": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/res/menu/main_menu.xml"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/menu/menu_friend_details.xml",
+        "source": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/res/menu/menu_friend_details.xml"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/menu/menu_chat_details.xml",
+        "source": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/res/menu/menu_chat_details.xml"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/menu/menu_multiple_select.xml",
+        "source": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/src/main/res/menu/menu_multiple_select.xml"
+    }
+]

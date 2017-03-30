@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/btholmes/.android/build-cache/f1f526ba1766722e1a0ec3e725aa9767ade9f6ea/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/btholmes/.android/build-cache/f1f526ba1766722e1a0ec3e725aa9767ade9f6ea/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/anim-v21/design_appbar_state_list_animator.xml",
+        "source": "/Users/btholmes/.android/build-cache/f1f526ba1766722e1a0ec3e725aa9767ade9f6ea/output/res/anim-v21/design_appbar_state_list_animator.xml"
+    }
+]
