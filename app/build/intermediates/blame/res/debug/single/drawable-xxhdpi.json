@@ -1,34 +1,34 @@
 [
     {
-        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/drawable-xxhdpi/messenger_bubble_small_white.png",
-        "source": "/Users/btholmes/.android/build-cache/ac58e3a92f9f428af375398edd3185b28c40aa06/output/res/drawable-xxhdpi/messenger_bubble_small_white.png"
-    },
-    {
-        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/drawable-xxhdpi/messenger_bubble_large_white.png",
-        "source": "/Users/btholmes/.android/build-cache/ac58e3a92f9f428af375398edd3185b28c40aa06/output/res/drawable-xxhdpi/messenger_bubble_large_white.png"
-    },
-    {
-        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/drawable-xxhdpi/com_facebook_button_send_icon.png",
-        "source": "/Users/btholmes/.android/build-cache/ac58e3a92f9f428af375398edd3185b28c40aa06/output/res/drawable-xxhdpi/com_facebook_button_send_icon.png"
-    },
-    {
-        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/drawable-xxhdpi/messenger_bubble_large_blue.png",
-        "source": "/Users/btholmes/.android/build-cache/ac58e3a92f9f428af375398edd3185b28c40aa06/output/res/drawable-xxhdpi/messenger_bubble_large_blue.png"
-    },
-    {
-        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/drawable-xxhdpi/com_facebook_button_like_icon_selected.png",
-        "source": "/Users/btholmes/.android/build-cache/ac58e3a92f9f428af375398edd3185b28c40aa06/output/res/drawable-xxhdpi/com_facebook_button_like_icon_selected.png"
-    },
-    {
-        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/drawable-xxhdpi/com_facebook_button_icon.png",
+        "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/debug/drawable-xxhdpi/com_facebook_button_icon.png",
         "source": "/Users/btholmes/.android/build-cache/ac58e3a92f9f428af375398edd3185b28c40aa06/output/res/drawable-xxhdpi/com_facebook_button_icon.png"
     },
     {
-        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/drawable-xxhdpi/messenger_button_send_round_shadow.png",
-        "source": "/Users/btholmes/.android/build-cache/ac58e3a92f9f428af375398edd3185b28c40aa06/output/res/drawable-xxhdpi/messenger_button_send_round_shadow.png"
+        "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/debug/drawable-xxhdpi/messenger_bubble_large_blue.png",
+        "source": "/Users/btholmes/.android/build-cache/ac58e3a92f9f428af375398edd3185b28c40aa06/output/res/drawable-xxhdpi/messenger_bubble_large_blue.png"
     },
     {
-        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/drawable-xxhdpi/messenger_bubble_small_blue.png",
+        "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/debug/drawable-xxhdpi/com_facebook_button_like_icon_selected.png",
+        "source": "/Users/btholmes/.android/build-cache/ac58e3a92f9f428af375398edd3185b28c40aa06/output/res/drawable-xxhdpi/com_facebook_button_like_icon_selected.png"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/debug/drawable-xxhdpi/com_facebook_button_send_icon.png",
+        "source": "/Users/btholmes/.android/build-cache/ac58e3a92f9f428af375398edd3185b28c40aa06/output/res/drawable-xxhdpi/com_facebook_button_send_icon.png"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/debug/drawable-xxhdpi/messenger_bubble_small_blue.png",
         "source": "/Users/btholmes/.android/build-cache/ac58e3a92f9f428af375398edd3185b28c40aa06/output/res/drawable-xxhdpi/messenger_bubble_small_blue.png"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/debug/drawable-xxhdpi/messenger_bubble_small_white.png",
+        "source": "/Users/btholmes/.android/build-cache/ac58e3a92f9f428af375398edd3185b28c40aa06/output/res/drawable-xxhdpi/messenger_bubble_small_white.png"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/debug/drawable-xxhdpi/messenger_bubble_large_white.png",
+        "source": "/Users/btholmes/.android/build-cache/ac58e3a92f9f428af375398edd3185b28c40aa06/output/res/drawable-xxhdpi/messenger_bubble_large_white.png"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/debug/drawable-xxhdpi/messenger_button_send_round_shadow.png",
+        "source": "/Users/btholmes/.android/build-cache/ac58e3a92f9f428af375398edd3185b28c40aa06/output/res/drawable-xxhdpi/messenger_button_send_round_shadow.png"
     }
 ]

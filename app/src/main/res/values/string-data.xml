@@ -1,6 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+        <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin
+    \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin</string>
+
+    <string name="short_lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+
+    <string name="middle_lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin</string>
+
+    <string name="long_lorem_ipsum">
+        Duis tellus metus, elementum a lectus id, aliquet interdum mauris. Nam bibendum efficitur sollicitudin. Proin eleifend libero velit, nec fringilla dolor finibus quis. nMorbi eu libero pellentesque, rutrum metus quis, blandit est. Fusce bibendum accumsan nisi vulputate feugiat. In fermentum laoreet euismod. Praesent sem nisl, facilisis eget odio at, rhoncus scelerisque ipsum. Nulla orci dui, dignissim a risus ut, lobortis porttitor velit.
+        \n\nNulla id lectus metus. Maecenas a lorem in odio auctor facilisis non vitae nunc. Sed malesuada volutpat massa. Praesent sit amet lacinia augue, mollis tempor dolor.
+    </string>
+
+
+    <string-array name="random_date">
+        <item>09:45</item>
+        <item>16:55</item>
+        <item>Yesterday, 23:10</item>
+        <item>02 Nov 15, 22:30</item>
+        <item>10 Sep 15, 06:15</item>
+        <item>11 Sep 15, 07.00</item>
+        <item>07:23</item>
+        <item>Just Now</item>
+        <item>30 Oct 2015, 16:43</item>
+        <item>21 Aug 2015, 20:35</item>
+    </string-array>
+
+    <integer-array name="feed_photos">
+        <item>@drawable/feed_photo_1</item>
+        <item>@drawable/feed_photo_2</item>
+        <item>@drawable/feed_photo_3</item>
+        <item>@drawable/feed_photo_4</item>
+        <item>@drawable/feed_photo_5</item>
+
+        <item>@drawable/feed_photo_6</item>
+        <item>@drawable/feed_photo_7</item>
+        <item>@drawable/feed_photo_8</item>
+        <item>@drawable/feed_photo_9</item>
+        <item>@drawable/feed_photo_10</item>
+
+        <item>@drawable/feed_photo_11</item>
+        <item>@drawable/feed_photo_12</item>
+        <item>@drawable/feed_photo_13</item>
+        <item>@drawable/feed_photo_14</item>
+        <item>@drawable/feed_photo_15</item>
+
+        <item>@drawable/feed_photo_16</item>
+        <item>@drawable/feed_photo_17</item>
+        <item>@drawable/feed_photo_18</item>
+        <item>@drawable/feed_photo_19</item>
+        <item>@drawable/feed_photo_20</item>
+
+        <item>@drawable/feed_photo_21</item>
+        <item>@drawable/feed_photo_22</item>
+        <item>@drawable/feed_photo_23</item>
+        <item>@drawable/feed_photo_24</item>
+        <item>@drawable/feed_photo_25</item>
+    </integer-array>
+
+
+
+
+    <!-- Strings related to login and registration -->
+    <string name="hint_country">Country</string>
+    <string name="hint_city">City</string>
+    <string name="btn_reset">Reset</string>
+    <string name="err_msg_email">Enter valid password</string>
+    <string name="err_msg_password">Enter the password</string>
+    <string name="err_msg_country">Enter the country</string>
+    <string name="err_msg_city">Enter the city</string>
+    <string name="inv_msg_password">Minimum length 5</string>
+    <string name="btn_sign_up">REGISTER</string>
+    <string name="err_msg_name">Enter your full name</string>
+
     <string-array name="people_names">
         <item>Anderson Thomas</item>
         <item>Adams Green</item>

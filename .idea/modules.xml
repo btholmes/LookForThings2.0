@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Chatting App.iml" filepath="$PROJECT_DIR$/Chatting App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LookForThings2.0.iml" filepath="$PROJECT_DIR$/LookForThings2.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

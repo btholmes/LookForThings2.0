@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -22,13 +23,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.facebook.login.LoginManager;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 import me.cchiang.lookforthings.data.Tools;
 import me.cchiang.lookforthings.fragment.ChatsFragment;
 import me.cchiang.lookforthings.fragment.FragmentAdapter;
 import me.cchiang.lookforthings.fragment.FriendsFragment;
+import me.cchiang.lookforthings.fragment.GalleryFragment;
 import me.cchiang.lookforthings.fragment.GroupsFragment;
 import me.cchiang.lookforthings.fragment.MainFragment;
 import me.cchiang.lookforthings.fragment.PlayFragment;
@@ -51,7 +67,13 @@ public class ActivityMain extends AppCompatActivity {
     private FriendsFragment f_friends;
     private ChatsFragment f_chats;
     private GroupsFragment f_groups;
+    private GalleryFragment f_gallery;
     private View parent_view;
+
+    private FirebaseAuth auth;
+    private FirebaseAuth.AuthStateListener authListener;
+    private FirebaseUser user;
+    private DatabaseReference mFirebaseDatabaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +82,29 @@ public class ActivityMain extends AppCompatActivity {
         parent_view = findViewById(me.cchiang.lookforthings.R.id.main_content);
         setupDrawerLayout();
         initComponent();
+
+        auth = FirebaseAuth.getInstance();
+
+        //get current user
+        user  = FirebaseAuth.getInstance().getCurrentUser();
+
+        authListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user == null) {
+                    // user auth state is changed - user is null
+                    // launch login activity
+                    startActivity(new Intent(ActivityMain.this, LoginActivity.class));
+                    finish();
+                }else {
+                    getDisplayName();
+                    TextView userEmail = (TextView) findViewById(R.id.userEmail);
+                    userEmail.setText(user.getEmail());
+                    setAvatar();
+                }
+            }
+        };
 
         prepareActionBar(toolbar);
 
@@ -71,6 +116,48 @@ public class ActivityMain extends AppCompatActivity {
 
         // for system bar in lollipop
         Tools.systemBarLolipop(this);
+    }
+
+    private void setAvatar() {
+        //Use picasso here to set avatar
+        ImageView avatar = (ImageView) findViewById(R.id.avatar);
+
+    }
+
+    private void getDisplayName() {
+
+        mFirebaseDatabaseReference = FirebaseDatabase.getInstance().getReference();
+        final Query ref = mFirebaseDatabaseReference.child("userList").child(user.getUid());
+        ref.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
+                //  dataSnapshot.getValue(User.class);
+                if(dataSnapshot.getKey().equals("displayName")){
+                    String userDisplayName = dataSnapshot.getValue(String.class);
+                    TextView displayName = (TextView) findViewById(R.id.displayName);
+                    if(userDisplayName != null){
+                        displayName.setText(userDisplayName);
+
+                    }else{
+                        displayName.setText("Please set Display Name");
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {}
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {}
+
+            @Override
+            public void onCancelled(DatabaseError error) {}
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {}
+        });
     }
 
     private void initAction() {
@@ -189,10 +276,13 @@ public class ActivityMain extends AppCompatActivity {
         if (f_groups == null) {
             f_groups = new GroupsFragment();
         }
+        if (f_gallery == null) {
+            f_gallery = new GalleryFragment();
+        }
 
         adapter.addFragment(f_chats, getString(me.cchiang.lookforthings.R.string.tab_chat));
         adapter.addFragment(f_main, getString(me.cchiang.lookforthings.R.string.tab_play));
-        adapter.addFragment(f_groups, getString(me.cchiang.lookforthings.R.string.tab_gallery));
+        adapter.addFragment(f_gallery, getString(me.cchiang.lookforthings.R.string.tab_gallery));
 
         viewPager.setAdapter(adapter);
     }
@@ -249,18 +339,52 @@ public class ActivityMain extends AppCompatActivity {
                 drawerLayout.closeDrawers();
 
                 if(menuItem.getTitle().equals("Change Display Name")){
-                    startActivity(new Intent(ActivityMain.this, UserProfileActivity.class));
+                    Intent i = new Intent(ActivityMain.this, ActivityEditInfo.class);
+                    i.putExtra("view", "Display");
+                    startActivity(i);
 
                 }else if(menuItem.getTitle().equals("Change Email")){
+                    Intent i = new Intent(ActivityMain.this, ActivityEditInfo.class);
+                    i.putExtra("view", "Email");
+                    startActivity(i);
 
                 }else if(menuItem.getTitle().equals("Change Password")){
+                    Intent i = new Intent(ActivityMain.this, ActivityEditInfo.class);
+                    i.putExtra("view", "Password");
+                    startActivity(i);
 
                 }else if(menuItem.getTitle().equals("Delete Account")){
+                    user = FirebaseAuth.getInstance().getCurrentUser();
+                    if (user != null) {
+                        user.delete()
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(ActivityMain.this, "Your profile is deleted:( Create a account now!", Toast.LENGTH_SHORT).show();
+                                            startActivity(new Intent(ActivityMain.this, SignupActivity.class));
+                                            finish();
+//                                            progressBar.setVisibility(View.GONE);
+                                        } else {
+                                            Toast.makeText(ActivityMain.this, "Failed to delete your account!", Toast.LENGTH_SHORT).show();
+//                                            progressBar.setVisibility(View.GONE);
+                                        }
+                                    }
+                                });
+                    }
 
                 }else if(menuItem.getTitle().equals("Sign Out")){
-
+                    auth = FirebaseAuth.getInstance();
+                    if(LoginManager.getInstance() != null){
+                        LoginManager.getInstance().logOut();
+                        Intent intent = new Intent(ActivityMain.this, LoginActivity.class);
+                        startActivity(intent);
+                    }else{
+                        auth.signOut();
+                        Intent intent = new Intent(ActivityMain.this, LoginActivity.class);
+                        startActivity(intent);
+                    }
                 }
-
 
 //                Snackbar.make(parent_view, menuItem.getTitle()+" Clicked ", Snackbar.LENGTH_SHORT).show();
                 return true;
@@ -281,6 +405,13 @@ public class ActivityMain extends AppCompatActivity {
         if (!isSearch) {
             mDrawerToggle.onConfigurationChanged(newConfig);
         }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        auth.addAuthStateListener(authListener);
+
     }
 
 

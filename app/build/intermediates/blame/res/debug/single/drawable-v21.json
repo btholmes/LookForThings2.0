@@ -1,22 +1,22 @@
 [
     {
-        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml",
-        "source": "/Users/btholmes/.android/build-cache/f1f526ba1766722e1a0ec3e725aa9767ade9f6ea/output/res/drawable-v21/design_bottom_navigation_item_background.xml"
-    },
-    {
-        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
         "source": "/Users/btholmes/.android/build-cache/ae5dca742f376ca667a9cfad6f7ec4cbc5512686/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml",
+        "source": "/Users/btholmes/.android/build-cache/f1f526ba1766722e1a0ec3e725aa9767ade9f6ea/output/res/drawable-v21/design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
         "source": "/Users/btholmes/.android/build-cache/ae5dca742f376ca667a9cfad6f7ec4cbc5512686/output/res/drawable-v21/abc_edit_text_material.xml"
     },
     {
-        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
+        "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
         "source": "/Users/btholmes/.android/build-cache/ae5dca742f376ca667a9cfad6f7ec4cbc5512686/output/res/drawable-v21/notification_action_background.xml"
     },
     {
-        "merged": "/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
         "source": "/Users/btholmes/.android/build-cache/ae5dca742f376ca667a9cfad6f7ec4cbc5512686/output/res/drawable-v21/abc_btn_colored_material.xml"
     }
 ]

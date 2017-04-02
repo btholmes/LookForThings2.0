@@ -16,7 +16,9 @@
         \n\nImage source :
         \n<a href="www.designskilz.com">www.designskilz.com</a>
     </string>
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin</string>
+    <!--<string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin</string>-->
+
+
     <!--dont edit-->
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>

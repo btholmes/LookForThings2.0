@@ -1,4 +1,4 @@
-#Thu Mar 30 17:16:43 CDT 2017
-base.0=/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+#Sat Apr 01 19:06:27 CDT 2017
+base.0=/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
-file.0=/Users/btholmes/Documents/github/gitlab/main_material_template_2.1/project/Chatting App/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
+file.0=/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

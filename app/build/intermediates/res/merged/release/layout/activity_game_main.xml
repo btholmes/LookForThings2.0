@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="me.cchiang.lookforthings.GameMainActivity"
+    >
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="casual"
+        android:text="Game Lobby"
+        android:textSize="45sp"
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/friendRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <!-- This is fo-->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/newGameBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Game"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="595dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp" />
+
+</RelativeLayout>

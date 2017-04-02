@@ -10,17 +10,64 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 
 import me.cchiang.lookforthings.R;
 import me.cchiang.lookforthings.model.Chat;
 import me.cchiang.lookforthings.model.ChatsDetails;
 import me.cchiang.lookforthings.model.Friend;
+import me.cchiang.lookforthings.model.GalleryImage;
 import me.cchiang.lookforthings.model.Group;
 import me.cchiang.lookforthings.model.GroupDetails;
 
 @SuppressWarnings("ResourceType")
 public class Constant {
 
+
+    public static List<GalleryImage> getRandomExploreFeed(Context ctx) {
+        return getListFeed(ctx, 50);
+    }
+
+    private static List<GalleryImage> getListFeed(Context ctx, int size){
+        List<GalleryImage> items = new ArrayList<>();
+        List<Friend> friends = getFriendsData(ctx);
+        String rand_date[] = ctx.getResources().getStringArray(R.array.random_date);
+        String rand_lorem[] = getLoremArr(ctx);
+        TypedArray photo = ctx.getResources().obtainTypedArray(R.array.feed_photos);
+        int friend_size = friends.size() - 1;
+        int date_size = rand_date.length - 1;
+        int lorem_size = rand_lorem.length - 1;
+        int photo_size = photo.length();
+
+        Random r = new Random();
+
+        for (int i = 0; i < size; i++) {
+            int f_i = getRandomIndex(r, 0, friend_size);
+            int d_i = getRandomIndex(r, 0, date_size);
+            int l_i = getRandomIndex(r, 0, lorem_size);
+            int p_i = getRandomIndex(r, 0, photo_size);
+            GalleryImage feed = new GalleryImage();
+            feed.setFriend(friends.get(f_i));
+            feed.setDate(rand_date[d_i]);
+            feed.setText(rand_lorem[l_i]);
+            feed.setPhoto(photo.getResourceId(p_i, -1));
+            items.add(feed);
+        }
+        return items;
+    }
+
+    private static int getRandomIndex(Random r, int min, int max) {
+        return r.nextInt(max - min) + min;
+    }
+
+    private static String[] getLoremArr(Context ctx) {
+        String rand_lorem[] = new String[4];
+        rand_lorem[0] = ctx.getString(R.string.lorem_ipsum);
+        rand_lorem[1] = ctx.getString(R.string.short_lorem_ipsum);
+        rand_lorem[2] = ctx.getString(R.string.long_lorem_ipsum);
+        rand_lorem[3] = ctx.getString(R.string.middle_lorem_ipsum);
+        return rand_lorem;
+    }
 
     public static Resources getStrRes(Context context){
         return context.getResources();

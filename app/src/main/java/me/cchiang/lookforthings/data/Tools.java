@@ -11,6 +11,17 @@ import me.cchiang.lookforthings.R;
 
 
 public class Tools {
+
+
+    public static int getGridExplorerCount(Activity activity) {
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        display.getMetrics(displayMetrics);
+        float screenWidth  = displayMetrics.widthPixels;
+        float cellWidth = activity.getResources().getDimension(R.dimen.explorer_item_size);
+        return Math.round(screenWidth / cellWidth);
+    }
+
     private static float getAPIVerison() {
 
         Float f = null;
