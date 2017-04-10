@@ -25,6 +25,7 @@
 
         </ListView>
 
+
         <TextView
             android:id="@android:id/empty"
             android:layout_width="fill_parent"

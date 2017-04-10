@@ -1,14 +1,19 @@
 package me.cchiang.lookforthings;
 
 import android.Manifest;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.NotificationCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -34,6 +39,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 //FIREBASE IMPORTS and FACEBOOK IMports
@@ -166,11 +172,14 @@ public class gameRoomActivity extends AppCompatActivity {
 
                 String challengerUID = mFirebaseUser.getUid();
                 String opponentUID = searchedUser.getUid();
-                Game gameObj = new Game(challengerUID, opponentUID);
+                List words = new ArrayList<String>();
+                words.add("Holder");
+                Game gameObj = new Game(challengerUID, opponentUID, words);
 
                 addGameToFirebase(gameObj);
 
 
+                showNotification("You Have a New Game Request");
                 Intent intent = new Intent(gameRoomActivity.this, GameMainActivity.class);
                 Toast.makeText(getApplicationContext(), "Challenged Sent!", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
@@ -236,24 +245,16 @@ public class gameRoomActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
+            public void onChildRemoved(DataSnapshot dataSnapshot) {}
 
             @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {}
 
             @Override
-            public void onCancelled(DatabaseError error) {
-
-            }
+            public void onCancelled(DatabaseError error) {}
 
             @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {
-
-            }
+            public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {}
         });
     }
 
@@ -319,7 +320,7 @@ public class gameRoomActivity extends AppCompatActivity {
     }
 
     /*
-     * Generate the random words from the provided array 
+     * Generate the random words from the provided array
      */
     public void generateRandom(){
 
@@ -377,6 +378,21 @@ public class gameRoomActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void showNotification(String msg){
+        //Creating a notification
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+        builder.setSmallIcon(R.mipmap.ic_launcher);
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.simplifiedcoding.net"));
+//        Intent intent = new Intent(Intent.ACTION_VIEW, );
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+        builder.setContentIntent(pendingIntent);
+        builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
+        builder.setContentTitle("Look For Things");
+        builder.setContentText(msg);
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(1, builder.build());
     }
 
 

@@ -80,12 +80,20 @@
         "source": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/row_chat_details.xml"
     },
     {
+        "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/release/layout/item_grid_gallery.xml",
+        "source": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/item_grid_gallery.xml"
+    },
+    {
         "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/release/layout/activity_camera.xml",
         "source": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_camera.xml"
     },
     {
         "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/release/layout/design_text_input_password_icon.xml",
         "source": "/Users/btholmes/.android/build-cache/f1f526ba1766722e1a0ec3e725aa9767ade9f6ea/output/res/layout/design_text_input_password_icon.xml"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/release/layout/activity_selected_game.xml",
+        "source": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_selected_game.xml"
     },
     {
         "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/release/layout/activity_friend_details.xml",
@@ -196,8 +204,16 @@
         "source": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_main_chat.xml"
     },
     {
+        "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/release/layout/user_stats.xml",
+        "source": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/user_stats.xml"
+    },
+    {
         "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/release/layout/notification_template_big_media_narrow.xml",
         "source": "/Users/btholmes/.android/build-cache/ae5dca742f376ca667a9cfad6f7ec4cbc5512686/output/res/layout/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/release/layout/activity_game_details.xml",
+        "source": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_details.xml"
     },
     {
         "merged": "/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/build/intermediates/res/merged/release/layout/design_layout_tab_text.xml",

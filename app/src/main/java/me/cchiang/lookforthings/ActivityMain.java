@@ -12,7 +12,6 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewPager;
@@ -83,10 +82,30 @@ public class ActivityMain extends AppCompatActivity {
         setupDrawerLayout();
         initComponent();
 
-        auth = FirebaseAuth.getInstance();
 
-        //get current user
+        prepareActionBar(toolbar);
+
+        if (viewPager != null) {
+            setupViewPager(viewPager);
+        }
+
+        initAction();
+
+        // for system bar in lollipop
+        Tools.systemBarLolipop(this);
+    }
+
+
+    private void initComponent() {
+
+        auth = FirebaseAuth.getInstance();
         user  = FirebaseAuth.getInstance().getCurrentUser();
+        mFirebaseDatabaseReference = FirebaseDatabase.getInstance().getReference();
+
+        if(user == null){
+            startActivity(new Intent(ActivityMain.this, LoginActivity.class));
+            finish();
+        }
 
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -105,28 +124,62 @@ public class ActivityMain extends AppCompatActivity {
                 }
             }
         };
+        auth.addAuthStateListener(authListener);
 
-        prepareActionBar(toolbar);
+        toolbar = (Toolbar) findViewById(me.cchiang.lookforthings.R.id.toolbar_viewpager);
+        // This is to override the default hamburger icon associated with the toolbar
+        changeDefaultIcon();
 
-        if (viewPager != null) {
-            setupViewPager(viewPager);
-        }
+        appBarLayout = (AppBarLayout) findViewById(me.cchiang.lookforthings.R.id.app_bar_layout);
+        searchToolbar = (Toolbar) findViewById(me.cchiang.lookforthings.R.id.toolbar_search);
+        fabChat = (FloatingActionButton) findViewById(R.id.fabChat);
+        fabAddFriend = (FloatingActionButton) findViewById(R.id.fabAddFriend);
+        viewPager = (ViewPager) findViewById(me.cchiang.lookforthings.R.id.viewpager);
 
-        initAction();
+    }
 
-        // for system bar in lollipop
-        Tools.systemBarLolipop(this);
+    private void changeDefaultIcon(){
+        toolbar.post(new Runnable() {
+            @Override
+            public void run() {
+
+                //THis resizes the drawable
+                Drawable d = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_people, null);
+
+                Bitmap b = ((BitmapDrawable)d).getBitmap();
+
+                int sizeX = (int)Math.round(d.getIntrinsicWidth() * 0.29);
+                int sizeY = (int)Math.round(d.getIntrinsicHeight() * 0.29);
+
+                Bitmap bitmapResized = Bitmap.createScaledBitmap(b, sizeX, sizeY, false);
+
+                d = new BitmapDrawable(getResources(), bitmapResized);
+
+                //This changes the color to white
+                d.setTint(Color.WHITE);
+
+                toolbar.setNavigationIcon(d);
+            }
+        });
+
     }
 
     private void setAvatar() {
-        //Use picasso here to set avatar
+        //Use picasso here to set avatar, and add on click listener to change it
         ImageView avatar = (ImageView) findViewById(R.id.avatar);
+
+        avatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityMain.this, gameRoomActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
     private void getDisplayName() {
 
-        mFirebaseDatabaseReference = FirebaseDatabase.getInstance().getReference();
         final Query ref = mFirebaseDatabaseReference.child("userList").child(user.getUid());
         ref.addChildEventListener(new ChildEventListener() {
             @Override
@@ -166,18 +219,40 @@ public class ActivityMain extends AppCompatActivity {
             public void onClick(View view) {
                 switch (viewPager.getCurrentItem()) {
                     case 0:
-                        Snackbar.make(parent_view, "Add Friend Clicked", Snackbar.LENGTH_SHORT).show();
-                        break;
-                    case 1:
-                        Intent i = new Intent(getApplicationContext(), ActivitySelectFriend.class);
+                        Intent i = new Intent(getApplicationContext(), ActivityStartChat.class);
                         startActivity(i);
                         break;
-                    case 2:
-                        Snackbar.make(parent_view, "Add Group Clicked", Snackbar.LENGTH_SHORT).show();
-                        break;
+//                    case 1:
+//                        Intent i = new Intent(getApplicationContext(), ActivitySelectFriend.class);
+//                        startActivity(i);
+//                        break;
+//                    case 2:
+//                        Snackbar.make(parent_view, "Add Group Clicked", Snackbar.LENGTH_SHORT).show();
+//                        break;
                 }
             }
         });
+        fabAddFriend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (viewPager.getCurrentItem()) {
+                    case 0:
+//                        Snackbar.make(parent_view, "Add Friend Clicked", Snackbar.LENGTH_SHORT).show();
+                        Intent i = new Intent(getApplicationContext(), ActivitySelectFriend.class);
+                        startActivity(i);
+                        break;
+//                    case 1:
+//                        Intent i = new Intent(getApplicationContext(), ActivitySelectFriend.class);
+//                        startActivity(i);
+//                        break;
+//                    case 2:
+//                        Snackbar.make(parent_view, "Add Group Clicked", Snackbar.LENGTH_SHORT).show();
+//                        break;
+                }
+            }
+        });
+
+
         TabLayout tabLayout = (TabLayout) findViewById(me.cchiang.lookforthings.R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -194,7 +269,7 @@ public class ActivityMain extends AppCompatActivity {
                         break;
                     case 1:
                         fabAddFriend.setVisibility(View.GONE);
-                        fabChat.setVisibility(View.VISIBLE);
+                        fabChat.setVisibility(View.GONE);
                         fabChat.setImageResource(R.drawable.ic_create);
                         break;
                     case 2:
@@ -208,53 +283,12 @@ public class ActivityMain extends AppCompatActivity {
             }
 
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-            }
+            public void onTabUnselected(TabLayout.Tab tab) {}
 
             @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-            }
+            public void onTabReselected(TabLayout.Tab tab) {}
         });
         viewPager.setCurrentItem(1);
-    }
-
-    private void initComponent() {
-        toolbar = (Toolbar) findViewById(me.cchiang.lookforthings.R.id.toolbar_viewpager);
-        // This is to override the default hamburger icon associated with the toolbar
-        changeDefaultIcon();
-
-        appBarLayout = (AppBarLayout) findViewById(me.cchiang.lookforthings.R.id.app_bar_layout);
-        searchToolbar = (Toolbar) findViewById(me.cchiang.lookforthings.R.id.toolbar_search);
-        fabChat = (FloatingActionButton) findViewById(R.id.fabChat);
-        fabAddFriend = (FloatingActionButton) findViewById(R.id.fabAddFriend);
-        viewPager = (ViewPager) findViewById(me.cchiang.lookforthings.R.id.viewpager);
-
-    }
-
-    private void changeDefaultIcon(){
-        toolbar.post(new Runnable() {
-            @Override
-            public void run() {
-
-                //THis resizes the drawable
-                Drawable d = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_people, null);
-
-                Bitmap b = ((BitmapDrawable)d).getBitmap();
-
-                int sizeX = (int)Math.round(d.getIntrinsicWidth() * 0.29);
-                int sizeY = (int)Math.round(d.getIntrinsicHeight() * 0.29);
-
-                Bitmap bitmapResized = Bitmap.createScaledBitmap(b, sizeX, sizeY, false);
-
-                d = new BitmapDrawable(getResources(), bitmapResized);
-
-                //This changes the color to white
-                d.setTint(Color.WHITE);
-
-                toolbar.setNavigationIcon(d);
-            }
-        });
-
     }
 
 
@@ -264,14 +298,8 @@ public class ActivityMain extends AppCompatActivity {
         if(f_main == null){
             f_main = new MainFragment();
         }
-        if(f_play == null){
-            f_play = new PlayFragment();
-        }
         if (f_chats == null) {
             f_chats = new ChatsFragment();
-        }
-        if (f_friends == null) {
-            f_friends = new FriendsFragment();
         }
         if (f_groups == null) {
             f_groups = new GroupsFragment();
@@ -342,12 +370,13 @@ public class ActivityMain extends AppCompatActivity {
                     Intent i = new Intent(ActivityMain.this, ActivityEditInfo.class);
                     i.putExtra("view", "Display");
                     startActivity(i);
-
                 }else if(menuItem.getTitle().equals("Change Email")){
                     Intent i = new Intent(ActivityMain.this, ActivityEditInfo.class);
                     i.putExtra("view", "Email");
                     startActivity(i);
-
+                }else if(menuItem.getTitle().equals("Data Collection")) {
+                    Intent i = new Intent(ActivityMain.this, dataCollectionActivity.class);
+                    startActivity(i);
                 }else if(menuItem.getTitle().equals("Change Password")){
                     Intent i = new Intent(ActivityMain.this, ActivityEditInfo.class);
                     i.putExtra("view", "Password");
@@ -377,12 +406,15 @@ public class ActivityMain extends AppCompatActivity {
                     auth = FirebaseAuth.getInstance();
                     if(LoginManager.getInstance() != null){
                         LoginManager.getInstance().logOut();
-                        Intent intent = new Intent(ActivityMain.this, LoginActivity.class);
-                        startActivity(intent);
+                        auth.signOut();
+                        Intent i = new Intent(ActivityMain.this, LoginActivity.class);
+                        startActivity(i);
+                        finish();
                     }else{
                         auth.signOut();
-                        Intent intent = new Intent(ActivityMain.this, LoginActivity.class);
-                        startActivity(intent);
+                        Intent i = new Intent(ActivityMain.this, LoginActivity.class);
+                        startActivity(i);
+                        finish();
                     }
                 }
 
@@ -410,8 +442,7 @@ public class ActivityMain extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        auth.addAuthStateListener(authListener);
-
+//        auth.addAuthStateListener(authListener);
     }
 
 

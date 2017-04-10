@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:2:1-120:12
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:2:1-146:12
 	package
 		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:3:5-39
 		INJECTED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml
@@ -46,7 +46,7 @@ ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main
 	android:name
 		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:9:22-68
 application
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:11:5-118:19
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:11:5-137:19
 MERGED from [com.android.support:design:25.0.1] /Users/btholmes/.android/build-cache/f1f526ba1766722e1a0ec3e725aa9767ade9f6ea/output/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:transition:25.0.1] /Users/btholmes/.android/build-cache/db1774e986371118e0da4027c2d6c1c814786174/output/AndroidManifest.xml:22:5-20
 MERGED from [de.hdodenhof:circleimageview:1.3.0] /Users/btholmes/.android/build-cache/112f1333ab489daf41a72d3a9c63bd41bdf55db1/output/AndroidManifest.xml:9:5-20
@@ -84,166 +84,184 @@ MERGED from [com.android.support:support-core-utils:25.0.1] /Users/btholmes/.and
 MERGED from [com.android.support:support-compat:25.0.1] /Users/btholmes/.android/build-cache/4c9bba9cbd5ceac5451697b025a2126a94ab7f49/output/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/btholmes/.android/build-cache/40c8f2cb7f7bd59fc5ccc4aaf4a2d34e64c68ac1/output/AndroidManifest.xml:9:5-20
 	android:label
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:14:9-41
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:15:9-41
 	android:supportsRtl
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:15:9-35
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:16:9-35
 	android:allowBackup
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:13:9-35
 	android:icon
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:13:9-43
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:14:9-43
 	android:theme
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:16:9-40
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:17:9-40
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:12:9-44
 activity#me.cchiang.lookforthings.ActivitySplash
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:17:9-23:20
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:18:9-24:20
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:17:19-49
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:18:19-49
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:18:13-22:29
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:19:13-23:29
 action#android.intent.action.MAIN
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:19:17-69
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:19:25-66
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:21:17-77
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:22:17-77
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:21:27-74
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:22:27-74
 activity#me.cchiang.lookforthings.ActivityEditInfo
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:25:9-27:70
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:26:9-28:70
 	android:windowSoftInputMode
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:27:13-68
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:28:13-68
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:26:13-45
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:27:13-45
 activity#me.cchiang.lookforthings.ActivityMain
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:29:9-30:20
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:31:9-32:20
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:29:19-47
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:31:19-47
 activity#me.cchiang.lookforthings.ActivityChatDetails
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:31:9-34:20
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:33:9-36:20
 	android:label
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:33:13-33
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:35:13-33
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:32:13-48
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:34:13-48
 activity#me.cchiang.lookforthings.ActivitySelectFriend
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:35:9-38:20
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:37:9-40:20
 	android:label
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:37:13-42
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:39:13-42
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:36:13-49
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:38:13-49
 activity#me.cchiang.lookforthings.ActivityFriendDetails
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:39:9-41:20
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:41:9-43:20
 	android:label
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:40:13-43
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:42:13-43
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:39:19-56
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:41:19-56
 activity#me.cchiang.lookforthings.ActivityGroupDetails
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:42:9-44:20
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:44:9-46:20
 	android:label
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:43:13-42
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:45:13-42
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:42:19-55
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:44:19-55
 activity#me.cchiang.lookforthings.MainActivity
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:47:9-50
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:49:9-50
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:47:19-47
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:49:19-47
+activity#me.cchiang.lookforthings.ActivityStartChat
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:50:9-55
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:50:19-52
 activity#me.cchiang.lookforthings.MainChatActivity
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:48:9-54
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:51:9-54
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:48:19-51
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:51:19-51
 activity#me.cchiang.lookforthings.PMChatActivity
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:49:9-52
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:52:9-52
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:49:19-49
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:52:19-49
 activity#me.cchiang.lookforthings.GlobalChatActivity
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:50:9-56
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:53:9-56
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:50:19-53
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:53:19-53
 activity#me.cchiang.lookforthings.dataCollectionActivity
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:51:9-59
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:54:9-59
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:51:19-57
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:54:19-57
 activity#me.cchiang.lookforthings.galleryActivity
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:52:9-62
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:55:9-62
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:52:19-50
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:55:19-50
+activity#me.cchiang.lookforthings.ActivityStartGame
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:56:9-55
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:56:19-52
+activity#me.cchiang.lookforthings.ActivityGameDetails
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:57:9-57
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:57:19-54
+activity#me.cchiang.lookforthings.ActivitySelectedGame
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:58:9-58
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:58:19-55
 activity#me.cchiang.lookforthings.gameRoomActivity
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:54:9-57:59
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:61:9-64:59
 	android:label
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:56:13-61
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:63:13-61
 	android:theme
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:57:13-56
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:64:13-56
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:55:13-45
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:62:13-45
 activity#me.cchiang.lookforthings.LoginActivity
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:66:9-69:59
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:73:9-76:59
 	android:label
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:68:13-57
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:75:13-57
 	android:theme
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:69:13-56
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:76:13-56
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:67:13-42
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:74:13-42
 activity#me.cchiang.lookforthings.SignupActivity
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:70:9-73:59
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:77:9-80:59
 	android:label
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:72:13-57
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:79:13-57
 	android:theme
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:73:13-56
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:80:13-56
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:71:13-43
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:78:13-43
 activity#me.cchiang.lookforthings.ResetPasswordActivity
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:74:9-77:59
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:81:9-84:59
 	android:label
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:76:13-66
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:83:13-66
 	android:theme
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:77:13-56
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:84:13-56
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:75:13-50
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:82:13-50
 activity#me.cchiang.lookforthings.cameraActivity
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:78:9-81:59
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:85:9-88:59
 	android:label
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:80:13-58
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:87:13-58
 	android:theme
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:81:13-56
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:88:13-56
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:79:13-43
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:86:13-43
 activity#com.facebook.FacebookActivity
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:86:9-90:75
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:93:9-97:75
 	android:label
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:89:13-45
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:96:13-45
 	android:configChanges
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:88:13-96
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:95:13-96
 	android:theme
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:90:13-72
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:97:13-72
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:87:13-57
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:94:13-57
 meta-data#com.facebook.sdk.ApplicationId
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:96:9-98:55
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:103:9-105:55
 	android:value
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:98:13-52
-	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:97:13-58
-meta-data#com.google.android.gms.version
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:103:9-105:69
-MERGED from [com.google.android.gms:play-services-basement:10.0.1] /Users/btholmes/.android/build-cache/69d63c3a363db5ccbd3c6b8e31bbb831dbf93e6f/output/AndroidManifest.xml:20:9-121
-	android:value
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:105:13-66
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:105:13-52
 	android:name
 		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:104:13-58
+meta-data#com.google.android.gms.version
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:110:9-112:69
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] /Users/btholmes/.android/build-cache/69d63c3a363db5ccbd3c6b8e31bbb831dbf93e6f/output/AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:112:13-66
+	android:name
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:111:13-58
 activity#me.cchiang.lookforthings.FriendListActivity
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:109:9-56
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:116:9-56
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:109:19-53
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:116:19-53
 activity#me.cchiang.lookforthings.SendPMActivity
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:110:9-52
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:117:9-52
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:110:19-49
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:117:19-49
 activity#me.cchiang.lookforthings.GameMainActivity
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:111:9-54
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:118:9-54
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:111:19-51
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:118:19-51
 activity#me.cchiang.lookforthings.UserProfileActivity
-ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:112:9-66
+ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:119:9-66
 	android:name
-		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:112:19-54
+		ADDED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml:119:19-54
 uses-sdk
 INJECTED from /Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:25.0.1] /Users/btholmes/.android/build-cache/f1f526ba1766722e1a0ec3e725aa9767ade9f6ea/output/AndroidManifest.xml:21:5-23:62

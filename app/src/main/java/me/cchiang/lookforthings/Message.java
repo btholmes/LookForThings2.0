@@ -11,6 +11,8 @@ public class Message {
     private String name;
     private String photoUrl;
     private String time;
+    private boolean fromMe;
+    private String sentFrom;
 
     public Message() {
     }
@@ -20,6 +22,7 @@ public class Message {
         this.name = name;
         this.photoUrl = photoUrl;
         this.time = time;
+        this.fromMe  = true;
     }
 
     public String getId() {
@@ -60,6 +63,22 @@ public class Message {
 
     public void setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
+    }
+
+    public boolean isFromMe() {
+        return fromMe;
+    }
+
+    public void setFromMe(boolean fromMe) {
+        this.fromMe = fromMe;
+    }
+
+    public String getSentFrom() {
+        return sentFrom;
+    }
+
+    public void setSentFrom(String sentFrom) {
+        this.sentFrom = sentFrom;
     }
 }
 

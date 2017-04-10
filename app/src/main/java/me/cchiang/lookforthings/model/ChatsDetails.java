@@ -8,6 +8,7 @@ public class ChatsDetails implements Serializable{
 	private Friend friend;
 	private String content;
 	private boolean fromMe;
+	private String sentFrom;
 
 	public ChatsDetails(long id, String date, Friend friend, String content, boolean fromMe) {
 		this.id = id;
@@ -35,5 +36,17 @@ public class ChatsDetails implements Serializable{
 
 	public boolean isFromMe() {
 		return fromMe;
+	}
+
+	public void setFromMe(boolean me){
+		this.fromMe = me;
+	}
+
+	public String getSentFrom() {
+		return sentFrom;
+	}
+
+	public void setSentFrom(String sentFrom) {
+		this.sentFrom = sentFrom;
 	}
 }

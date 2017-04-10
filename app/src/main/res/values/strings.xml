@@ -77,8 +77,7 @@
 
     <string name="firebase_error_login">Firebase Login Error</string>
 
-    <string name="facebook_app_id">1610378085640756
-    </string>
+    <string name="facebook_app_id">1610378085640756</string>
     <string name="facebook_app_name">LookForThings</string>
     <string name="cancelled">Cancelled</string>
     <string name="permission_not_granted">Unable to perform selected action because permissions were not granted.</string>

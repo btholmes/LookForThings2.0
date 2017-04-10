@@ -130,7 +130,7 @@ public class Constant {
         String s_cht[] = ctx.getResources().getStringArray(R.array.chat_snippet);
         String s_date[] = ctx.getResources().getStringArray(R.array.chat_date);
         for (int i = 0; i < 10; i++) {
-            items.add(new Chat(i, s_date[i], true, new Friend(s_arr[i+5], drw_arr.getResourceId(i+5, -1)), s_cht[i]));
+            items.add(new Chat(i, s_date[i], true, new Friend(s_arr[i+5], drw_arr.getResourceId(i+5, -1)), "Same everywhere"));
         }
         return items;
     }

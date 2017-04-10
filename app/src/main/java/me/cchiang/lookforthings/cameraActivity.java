@@ -30,8 +30,12 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONObject;
 
@@ -50,9 +54,16 @@ import clarifai2.dto.input.image.ClarifaiImage;
 import clarifai2.dto.model.ConceptModel;
 import clarifai2.dto.model.output.ClarifaiOutput;
 import clarifai2.dto.prediction.Concept;
+import me.cchiang.lookforthings.model.Player;
 
 
 public class cameraActivity extends AppCompatActivity {
+
+    public static void navigate(AppCompatActivity activity, Game obj) {
+        Intent intent = new Intent(activity, cameraActivity.class);
+        intent.putExtra(KEY_GAME, obj);
+        ActivityCompat.startActivity(activity, intent, null);
+    }
 
     private static final int READ_CONTACTS = 1000;
     private static final int WRITE_EXTERNAL_STORAGE = 1001;
@@ -78,6 +89,7 @@ public class cameraActivity extends AppCompatActivity {
     ImageView mimageView;
     Bitmap photo;
     private Uri selectedImage;
+    private Game game;
 
     private final ClarifaiClient clarifaiClient = new ClarifaiBuilder(Credential.CLIENT_ID,
             Credential.CLIENT_SECRET).buildSync();
@@ -85,23 +97,23 @@ public class cameraActivity extends AppCompatActivity {
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
     private static final int GALLERY_IMAGE_ACTIVITY_REQUEST_CODE = 200;
 
+    private  FirebaseUser user;
+    private DatabaseReference mFirebaseDatabaseReference;
+    public static String KEY_GAME = "Game";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 
-        // getting every element
-        needList = (TextView) this.findViewById(R.id.needList);
-        needList.setText("chair, table, computer");
+        initComponent();
 
-        getViews();
-        head.setText(gameRoomActivity.word);
-        handleCameraBtnClick();
+        Intent intent = getIntent();
+        game = (Game) intent.getExtras().getSerializable(KEY_GAME);
+
 //        Only need to check permissions on newer versions of android
 //        checkPermissions();
-
-        mimageView = (ImageView) this.findViewById(R.id.picture);
-
         for (int i = 0 ; i < checkList.size(); i++){
             String temp = checkList.get(i);
             leftList.add(temp);
@@ -158,12 +170,6 @@ public class cameraActivity extends AppCompatActivity {
     /**
      * Store views for camera and gallery buttons and for the TextView for displaying tags
      */
-    public void getViews() {
-        cameraButton = (ImageButton) findViewById(R.id.cameraButton);
-        head = (TextView) findViewById(R.id.head);
-        tagText = (TextView) findViewById(R.id.tag_text);
-        checkText = (TextView) findViewById(R.id.check_text);
-    }
 
     /**
      * Camera button handler
@@ -176,6 +182,24 @@ public class cameraActivity extends AppCompatActivity {
                 startActivityForResult(cameraIntent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
             }
         });
+    }
+
+
+    private void initComponent(){
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        mFirebaseDatabaseReference = FirebaseDatabase.getInstance().getReference();
+
+        cameraButton = (ImageButton) findViewById(R.id.cameraButton);
+        head = (TextView) findViewById(R.id.head);
+        tagText = (TextView) findViewById(R.id.tag_text);
+        checkText = (TextView) findViewById(R.id.check_text);
+
+        needList = (TextView) this.findViewById(R.id.needList);
+        needList.setText("chair, table, computer");
+        head.setText(gameRoomActivity.word);
+        mimageView = (ImageView) this.findViewById(R.id.picture);
+        handleCameraBtnClick();
     }
 
 
@@ -321,14 +345,32 @@ public class cameraActivity extends AppCompatActivity {
     }
 
 
-    public void addImageUrlToFirebase(String url){
+    private void setPlayerInfo(final String url){
 
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            DatabaseReference mFirebaseDatabaseReference;
-            mFirebaseDatabaseReference = FirebaseDatabase.getInstance().getReference();
+        Query ref = mFirebaseDatabaseReference.child("PlayerInfo").child(game.getGameID()).child(user.getUid());
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                if(snapshot.getValue() != null){
+                    Player player = snapshot.getValue(Player.class);
+                    player.setLastPictureTaken(url);
+                    mFirebaseDatabaseReference.child("PlayerInfo").child(game.getGameID()).child(user.getUid()).setValue(player);
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
+    public void addImageUrlToFirebase(String url){
 
             mFirebaseDatabaseReference.child("Images").child(user.getUid()).child("currentGameFolder").push().setValue(url);
             mFirebaseDatabaseReference.child("userList").child(user.getUid()).child("lastPictureTaken").setValue(url);
+
+            setPlayerInfo(url);
             Toast.makeText(cameraActivity.this, "Image Saved", Toast.LENGTH_LONG).show();
 
     }

@@ -116,7 +116,11 @@ public class FriendsListAdapter extends RecyclerView.Adapter<FriendsListAdapter.
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return filtered_items.size();
+
+        if(filtered_items != null){
+            return filtered_items.size();
+        }
+        return 0;
     }
 
 

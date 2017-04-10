@@ -2,8 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="me.cchiang.lookforthings"
     android:versionCode="1"
-    android:versionName="1.0" >
-
+    android:versionName="1.0" > <!-- <service -->
+    <!-- android:name=".MyFirebaseMessagingService"> -->
+    <!-- <intent-filter> -->
+    <!-- <action android:name="com.google.firebase.MESSAGING_EVENT"/> -->
+    <!-- </intent-filter> -->
+    <!-- </service> -->
     <uses-sdk
         android:minSdkVersion="21"
         android:targetSdkVersion="25" />
@@ -59,11 +63,15 @@
             android:label="Group Details" >
         </activity>
         <activity android:name="me.cchiang.lookforthings.MainActivity" />
+        <activity android:name="me.cchiang.lookforthings.ActivityStartChat" />
         <activity android:name="me.cchiang.lookforthings.MainChatActivity" />
         <activity android:name="me.cchiang.lookforthings.PMChatActivity" />
         <activity android:name="me.cchiang.lookforthings.GlobalChatActivity" />
         <activity android:name="me.cchiang.lookforthings.dataCollectionActivity" />
         <activity android:name="me.cchiang.lookforthings.galleryActivity" />
+        <activity android:name="me.cchiang.lookforthings.ActivityStartGame" />
+        <activity android:name="me.cchiang.lookforthings.ActivityGameDetails" />
+        <activity android:name="me.cchiang.lookforthings.ActivitySelectedGame" />
         <activity
             android:name="me.cchiang.lookforthings.gameRoomActivity"
             android:label="@string/title_activity_game_room"
@@ -123,6 +131,17 @@
         <activity android:name="me.cchiang.lookforthings.SendPMActivity" />
         <activity android:name="me.cchiang.lookforthings.GameMainActivity" />
         <activity android:name="me.cchiang.lookforthings.UserProfileActivity" />
+
+        <!-- &lt;!&ndash; Set custom default icon. This is used when no icon is set for incoming notification messages. -->
+        <!-- See README(https://goo.gl/l4GJaQ) for more. &ndash;&gt; -->
+        <!-- <meta-data -->
+        <!-- android:name="com.google.firebase.messaging.default_notification_icon" -->
+        <!-- android:resource="@drawable/ic_stat_ic_notification" /> -->
+        <!-- &lt;!&ndash; Set color used with incoming notification messages. This is used when no color is set for the incoming -->
+        <!-- notification message. See README(https://goo.gl/6BKBk7) for more. &ndash;&gt; -->
+        <!-- <meta-data -->
+        <!-- android:name="com.google.firebase.messaging.default_notification_color" -->
+        <!-- android:resource="@color/colorAccent" /> -->
 
         <service
             android:name="net.gotev.uploadservice.UploadService"

@@ -12,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.List;
 
 import me.cchiang.lookforthings.R;
@@ -21,6 +24,7 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 	
 	private List<ChatsDetails> mMessages;
 	private Context ctx;
+	private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 	
 	public ChatDetailsListAdapter(Context context, List<ChatsDetails> messages) {
         super();
@@ -63,6 +67,14 @@ public class ChatDetailsListAdapter extends BaseAdapter {
         holder.message.setText(msg.getContent());
 		holder.time.setText(msg.getDate());
 
+		if(msg.getSentFrom() != null){
+			if(msg.getSentFrom().equals(user.getUid())){
+				msg.setFromMe(true);
+			}else{
+				msg.setFromMe(false);
+			}
+		}
+
         if(msg.isFromMe()){
 			holder.lyt_parent.setPadding(100, 10, 15, 10);
 			holder.lyt_parent.setGravity(Gravity.RIGHT);
@@ -92,11 +104,18 @@ public class ChatDetailsListAdapter extends BaseAdapter {
 		mMessages.add(msg);
 	}
 	
-	private static class ViewHolder{
-		TextView time;
-		TextView message;
-		LinearLayout lyt_parent;
-		CardView lyt_thread;
-		ImageView image_status;
-	}	
+	public static class ViewHolder{
+//		public TextView messageTextView;
+//        public TextView messengerTextView;
+//        public CircleImageView messengerImageView;
+//        public TextView timeTextView;
+		public TextView time;
+		public TextView message;
+		public LinearLayout lyt_parent;
+		public CardView lyt_thread;
+		public ImageView image_status;
+	}
+
+
+
 }

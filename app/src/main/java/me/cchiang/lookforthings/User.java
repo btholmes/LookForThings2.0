@@ -9,6 +9,7 @@ public class User {
     private String uid;
     private String email;
     private String displayName;
+    private String photoUrl;
 
     public User() {
 
@@ -44,4 +45,11 @@ public class User {
         this.displayName = displayName;
     }
 
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
 }

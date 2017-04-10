@@ -11,6 +11,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="me.cchiang.lookforthings.gameRoomActivity">
 
+
+
     <Button
         android:id="@+id/searchBtn"
         android:layout_width="wrap_content"
@@ -40,6 +42,26 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
 
+    <CheckBox
+        android:id="@+id/box1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/startBtn"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="68dp"
+        android:enabled="true"
+        android:text="Easy" />
+
+    <CheckBox
+        android:id="@+id/box3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_below="@+id/randomView"
+        android:layout_marginEnd="20dp"
+        android:enabled="true"
+        android:text="Hard" />
+
     <Button
         android:id="@+id/pictureBtn"
         style="@style/Widget.AppCompat.Button.Colored"
@@ -62,16 +84,6 @@
         android:layout_above="@+id/pictureBtn"
         android:layout_centerHorizontal="true" />
 
-    <CheckBox
-        android:id="@+id/box1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/startBtn"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="68dp"
-        android:enabled="true"
-        android:text="Easy" />
-
     <TextView
         android:text="Create Game"
         android:layout_width="wrap_content"
@@ -83,15 +95,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp" />
 
-    <CheckBox
-        android:id="@+id/box3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView"
-        android:layout_below="@+id/randomView"
-        android:layout_marginEnd="20dp"
-        android:enabled="true"
-        android:text="Hard" />
+
 
     <TextView
         android:id="@+id/randomView"

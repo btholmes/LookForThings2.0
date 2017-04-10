@@ -10,6 +10,7 @@ public class GalleryImage {
     private Friend friend;
     private String text = null;
     private int photo = -1;
+    private String url;
 
     public GalleryImage() {
     }
@@ -60,5 +61,13 @@ public class GalleryImage {
 
     public void setPhoto(int photo) {
         this.photo = photo;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

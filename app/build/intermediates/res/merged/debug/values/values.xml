@@ -1103,8 +1103,7 @@
     <string name="err_msg_password">Enter the password</string>
     <string name="error">Error</string>
     <string name="exception">Exception: %1$s</string>
-    <string name="facebook_app_id">1610378085640756
-    </string>
+    <string name="facebook_app_id">1610378085640756</string>
     <string name="facebook_app_name">LookForThings</string>
     <string name="firebase_database_url" translatable="false">https://look-for-things.firebaseio.com</string>
     <string name="firebase_error_login">Firebase Login Error</string>

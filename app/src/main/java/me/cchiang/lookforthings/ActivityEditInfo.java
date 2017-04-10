@@ -17,8 +17,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 
 public class ActivityEditInfo extends AppCompatActivity {
@@ -52,7 +56,8 @@ public class ActivityEditInfo extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         if(display.equals("Display")){
             input_username.setVisibility(View.VISIBLE);
-            input_username.setText(user.getDisplayName());
+//            input_username.setText(user.getDisplayName());
+            getDisplayName();
             input_password.setHint("New Display");
             btnChange.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -86,6 +91,44 @@ public class ActivityEditInfo extends AppCompatActivity {
             });
 
         }
+    }
+
+    private void getDisplayName() {
+
+        mFirebaseDatabaseReference = FirebaseDatabase.getInstance().getReference();
+        final Query ref = mFirebaseDatabaseReference.child("userList").child(user.getUid());
+        ref.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
+                //  dataSnapshot.getValue(User.class);
+                if(dataSnapshot.getKey().equals("displayName")){
+                    String userDisplayName = dataSnapshot.getValue(String.class);
+//                    TextView displayName = (TextView) view.findViewById(R.id.displayName);
+                    if(userDisplayName != null){
+                        input_username.setText(userDisplayName);
+                        //            input_username.setText(user.getDisplayName());
+
+
+                    }else{
+                        input_username.setText("Please set Display Name");
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {}
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {}
+
+            @Override
+            public void onCancelled(DatabaseError error) {}
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {}
+        });
     }
 
     private void changeDisplay(){

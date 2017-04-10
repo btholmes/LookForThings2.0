@@ -64,7 +64,6 @@ public class LoginActivity extends AppCompatActivity {
 
     //    FROM MAIN PAGE
     private EditText inputEmail, inputPassword;
-    //    private FirebaseAuth auth;
     private ProgressBar progressBar;
     private Button btnSignup, btnLogin, btnReset;
 
@@ -74,8 +73,11 @@ public class LoginActivity extends AppCompatActivity {
         FacebookSdk.sdkInitialize(this.getApplicationContext());
         setContentView(R.layout.activity_login);
 
+        initComponent();
 
-        // Configure Google Sign In
+    }
+
+    private void configureGoogle(){
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -92,10 +94,6 @@ public class LoginActivity extends AppCompatActivity {
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
-        // [END config_signin]
-
-
-//        GOOGLE STUFF SIGN IN BUTTON ON CLICK LISTENER
         signInButton = (com.google.android.gms.common.SignInButton)findViewById(R.id.sign_in_button);
 
         signInButton.setOnClickListener(new View.OnClickListener() {
@@ -106,11 +104,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-//        END GOOGLE SIGN IN CLICK EVENT STUFF
+    }
 
-
-//        FACEBOOK STUFF
-
+    private void configureFacebook(){
 
         callbackManager = CallbackManager.Factory.create();
 
@@ -136,7 +132,23 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void initComponent(){
+
         firebaseAuth = FirebaseAuth.getInstance();
+
+        inputEmail = (EditText) findViewById(R.id.email);
+        inputPassword = (EditText) findViewById(R.id.password);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        btnSignup = (Button) findViewById(R.id.btn_signup);
+        btnLogin = (Button) findViewById(R.id.btn_login);
+        btnReset = (Button) findViewById(R.id.btn_reset_password);
+
+        configureGoogle();
+        configureFacebook();
+
+
         firebaseAuthListner = new FirebaseAuth.AuthStateListener(){
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -146,14 +158,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         };
-//        END FACEBOOK STUFF
-
-        inputEmail = (EditText) findViewById(R.id.email);
-        inputPassword = (EditText) findViewById(R.id.password);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        btnSignup = (Button) findViewById(R.id.btn_signup);
-        btnLogin = (Button) findViewById(R.id.btn_login);
-        btnReset = (Button) findViewById(R.id.btn_reset_password);
 
 
         btnSignup.setOnClickListener(new View.OnClickListener() {
@@ -216,15 +220,14 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-    }
 
+    }
 
     private void handleFacebookAccessToken(AccessToken accessToken) {
         AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-//                System.out.println("****************************************************************************************************************************************");
                 if(!task.isSuccessful()){
                     Toast.makeText(getApplicationContext(), R.string.firebase_error_login, Toast.LENGTH_LONG).show();
                 }
@@ -235,7 +238,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        //callbackManager.onActivityResult(requestCode,resultCode,data);
+        callbackManager.onActivityResult(requestCode,resultCode,data);
 //        GOOGLE SIGN IN STUFF
 
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);

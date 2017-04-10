@@ -17,7 +17,9 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:clickable="true"
+            android:cropToPadding="false"
             android:padding="@dimen/spacing_xsmall"
+            android:scaleType="centerCrop"
             android:src="@drawable/photo_male_5" />
 
         <View
@@ -25,12 +27,15 @@
             android:layout_height="1px"
             android:background="@color/grey_bg" />
 
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal"
             android:visibility="visible"
-            app:layout_scrollFlags="scroll|enterAlways">
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:weightSum="1">
 
 
             <!--<ImageView-->
@@ -82,21 +87,29 @@
                 <!--android:tint="@color/grey_medium" />-->
             <Button
                 android:id="@+id/new_game_btn"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Start New Game"
                 android:backgroundTint="@color/bg_main"
-                />
+                android:text="New Game" />
+
+            <!--<Button-->
+                <!--android:id="@+id/stats_button"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:backgroundTint="@color/bg_main"-->
+                <!--android:layout_weight="0.5"-->
+                <!--android:text="User Stats" />-->
         </LinearLayout>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="365dp"
+            android:layout_height="333dp"
             android:clipToPadding="false"
             android:scrollbars="vertical"
-            android:layout_gravity="bottom"/>
+            android:layout_gravity="top"/>
 
     </LinearLayout>
 

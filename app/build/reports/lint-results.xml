@@ -41,12 +41,44 @@
         priority="8"
         summary="RecyclerView Problems"
         explanation="`RecyclerView` will *not* call `onBindViewHolder` again when the position of the item changes in the data set unless the item itself is invalidated or the new position cannot be determined.&#xA;&#xA;For this reason, you should *only* use the position parameter while acquiring the related data item inside this method, and should *not* keep a copy of it.&#xA;&#xA;If you need the position of an item later on (e.g. in a click listener), use `getAdapterPosition()` which will have the updated adapter position."
+        errorLine1="    public void onBindViewHolder(ViewHolder holder, final int position) {"
+        errorLine2="                                                    ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/adapter/GalleryAdapter.java"
+            line="63"
+            column="53"/>
+    </issue>
+
+    <issue
+        id="RecyclerView"
+        severity="Error"
+        message="Do not treat position as fixed; only use immediately and call `holder.getAdapterPosition()` to look it up later"
+        category="Correctness"
+        priority="8"
+        summary="RecyclerView Problems"
+        explanation="`RecyclerView` will *not* call `onBindViewHolder` again when the position of the item changes in the data set unless the item itself is invalidated or the new position cannot be determined.&#xA;&#xA;For this reason, you should *only* use the position parameter while acquiring the related data item inside this method, and should *not* keep a copy of it.&#xA;&#xA;If you need the position of an item later on (e.g. in a click listener), use `getAdapterPosition()` which will have the updated adapter position."
         errorLine1="    public void onBindViewHolder(ViewHolder holder, final int position) {"
         errorLine2="                                                    ~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/adapter/GroupsGridAdapter.java"
             line="83"
             column="53"/>
+    </issue>
+
+    <issue
+        id="RecyclerView"
+        severity="Error"
+        message="Do not treat position as fixed; only use immediately and call `holder.getAdapterPosition()` to look it up later"
+        category="Correctness"
+        priority="8"
+        summary="RecyclerView Problems"
+        explanation="`RecyclerView` will *not* call `onBindViewHolder` again when the position of the item changes in the data set unless the item itself is invalidated or the new position cannot be determined.&#xA;&#xA;For this reason, you should *only* use the position parameter while acquiring the related data item inside this method, and should *not* keep a copy of it.&#xA;&#xA;If you need the position of an item later on (e.g. in a click listener), use `getAdapterPosition()` which will have the updated adapter position."
+        errorLine1="        public void onBindViewHolder(MainListAdapter.GameViewHolder holder, final int position) {"
+        errorLine2="                                                                            ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/adapter/MainListAdapter.java"
+            line="91"
+            column="77"/>
     </issue>
 
     <issue
@@ -99,7 +131,7 @@
         errorLine2="                                                 ~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/adapter/FriendsListAdapter.java"
-            line="126"
+            line="130"
             column="50"/>
     </issue>
 
@@ -117,7 +149,7 @@
         errorLine2="                              ~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/adapter/FriendsListAdapter.java"
-            line="134"
+            line="138"
             column="31"/>
     </issue>
 
@@ -179,12 +211,12 @@
         explanation="Almost all callers should use `getDateInstance()`, `getDateTimeInstance()`, or `getTimeInstance()` to get a ready-made instance of SimpleDateFormat suitable for the user&apos;s locale. The main reason you&apos;d create an instance this class directly is because you need to format/parse a specific machine-readable format, in which case you almost certainly want to explicitly ask for US to ensure that you get ASCII digits (rather than, say, Arabic digits).&#xA;&#xA;Therefore, you should either use the form of the SimpleDateFormat constructor where you pass in an explicit locale, such as Locale.US, or use one of the get instance methods, or suppress this error if really know what you are doing."
         url="http://developer.android.com/reference/java/text/SimpleDateFormat.html"
         urls="http://developer.android.com/reference/java/text/SimpleDateFormat.html"
-        errorLine1="        dateCreated =  new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;).format(new Date());"
-        errorLine2="                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="        date =  new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;).format(new Date());"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/Game.java"
-            line="27"
-            column="24"/>
+            line="37"
+            column="17"/>
     </issue>
 
     <issue
@@ -203,6 +235,24 @@
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/FriendListActivity.java"
             line="100"
             column="99"/>
+    </issue>
+
+    <issue
+        id="InflateParams"
+        severity="Warning"
+        message="Avoid passing `null` as the view root (needed to resolve layout parameters on the inflated layout&apos;s root element)"
+        category="Correctness"
+        priority="5"
+        summary="Layout Inflation without a Parent"
+        explanation="When inflating a layout, avoid passing in null as the parent view, since otherwise any layout parameters on the root of the inflated layout will be ignored."
+        url="http://www.doubleencore.com/2013/05/layout-inflation-as-intended"
+        urls="http://www.doubleencore.com/2013/05/layout-inflation-as-intended"
+        errorLine1="            View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_lobby_friend, null);"
+        errorLine2="                                                                                                        ~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/GameMainActivity.java"
+            line="82"
+            column="105"/>
     </issue>
 
     <issue
@@ -249,22 +299,6 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_friend_list.xml"
-            line="17"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="UnknownIdInLayout"
-        severity="Warning"
-        message="The id &quot;`linearLayout`&quot; is not referring to any views in this layout"
-        category="Correctness"
-        priority="5"
-        summary="Reference to an id that is not in the current layout"
-        explanation="The `@+id/` syntax refers to an existing id, or creates a new one if it has not already been defined elsewhere. However, this means that if you have a typo in your reference, or if the referred view no longer exists, you do not get a warning since the id will be created on demand.&#xA;&#xA;This is sometimes intentional, for example where you are referring to a view which is provided in a different layout via an include. However, it is usually an accident where you have a typo or you have renamed a view without updating all the references to it."
-        errorLine1="        android:layout_above=&quot;@+id/linearLayout&quot;/>"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_gallery.xml"
             line="17"
             column="9"/>
     </issue>
@@ -976,7 +1010,7 @@
         errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_edit_info.xml"
-            line="54"
+            line="55"
             column="25"/>
     </issue>
 
@@ -992,7 +1026,7 @@
         errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_edit_info.xml"
-            line="94"
+            line="95"
             column="25"/>
     </issue>
 
@@ -1299,7 +1333,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/string-data.xml"
-            line="63"
+            line="124"
             column="15"/>
     </issue>
 
@@ -1347,11 +1381,27 @@
         priority="7"
         summary="Missing `recycle()` calls"
         explanation="Many resources, such as TypedArrays, VelocityTrackers, etc., should be recycled (with a `recycle()` call) after use. This lint check looks for missing `recycle()` calls."
+        errorLine1="        TypedArray photo = ctx.getResources().obtainTypedArray(R.array.feed_photos);"
+        errorLine2="                                              ~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/data/Constant.java"
+            line="36"
+            column="47"/>
+    </issue>
+
+    <issue
+        id="Recycle"
+        severity="Warning"
+        message="This `TypedArray` should be recycled after use with `#recycle()`"
+        category="Performance"
+        priority="7"
+        summary="Missing `recycle()` calls"
+        explanation="Many resources, such as TypedArrays, VelocityTrackers, etc., should be recycled (with a `recycle()` call) after use. This lint check looks for missing `recycle()` calls."
         errorLine1="        TypedArray drw_arr = ctx.getResources().obtainTypedArray(R.array.people_photos);"
         errorLine2="                                                ~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/data/Constant.java"
-            line="71"
+            line="118"
             column="49"/>
     </issue>
 
@@ -1367,7 +1417,7 @@
         errorLine2="                                                ~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/data/Constant.java"
-            line="82"
+            line="129"
             column="49"/>
     </issue>
 
@@ -1383,7 +1433,7 @@
         errorLine2="                                                ~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/data/Constant.java"
-            line="95"
+            line="142"
             column="49"/>
     </issue>
 
@@ -1400,42 +1450,8 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_chat_details.xml"
-            line="73"
+            line="74"
             column="13"/>
-    </issue>
-
-    <issue
-        id="ObsoleteLayoutParam"
-        severity="Warning"
-        message="Invalid layout param in a `LinearLayout`: `layout_alignParentBottom`"
-        category="Performance"
-        priority="6"
-        summary="Obsolete layout params"
-        explanation="The given layout_param is not defined for the given layout, meaning it has no effect. This usually happens when you change the parent layout or move view code around without updating the layout params. This will cause useless attribute processing at runtime, and is misleading for others reading the layout so the parameter should be removed."
-        errorLine1="                android:layout_alignParentBottom=&quot;true&quot;"
-        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_edit_info.xml"
-            line="131"
-            column="17"/>
-    </issue>
-
-    <issue
-        id="ObsoleteLayoutParam"
-        severity="Warning"
-        message="Invalid layout param in a `LinearLayout`: `layout_centerHorizontal`"
-        category="Performance"
-        priority="6"
-        summary="Obsolete layout params"
-        explanation="The given layout_param is not defined for the given layout, meaning it has no effect. This usually happens when you change the parent layout or move view code around without updating the layout params. This will cause useless attribute processing at runtime, and is misleading for others reading the layout so the parameter should be removed."
-        errorLine1="                android:layout_centerHorizontal=&quot;true&quot;"
-        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_edit_info.xml"
-            line="132"
-            column="17"/>
     </issue>
 
     <issue
@@ -1467,7 +1483,23 @@
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/ActivityChatDetails.java"
-            line="48"
+            line="78"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak"
+        severity="Warning"
+        message="Do not place Android context classes in static fields (static reference to `ChatDetailsListAdapter` which has field `ctx` pointing to `Context`); this is a memory leak (and also breaks Instant Run)"
+        category="Performance"
+        priority="6"
+        summary="Static Field Leaks"
+        explanation="A static field will leak contexts."
+        errorLine1="    public static ChatDetailsListAdapter adapter;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/ActivityGameDetails.java"
+            line="61"
             column="5"/>
     </issue>
 
@@ -1490,6 +1522,38 @@
     <issue
         id="StaticFieldLeak"
         severity="Warning"
+        message="Do not place Android context classes in static fields (static reference to `ChatDetailsListAdapter` which has field `ctx` pointing to `Context`); this is a memory leak (and also breaks Instant Run)"
+        category="Performance"
+        priority="6"
+        summary="Static Field Leaks"
+        explanation="A static field will leak contexts."
+        errorLine1="    public static ChatDetailsListAdapter adapter;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/ActivitySelectedGame.java"
+            line="60"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak"
+        severity="Warning"
+        message="Do not place Android context classes in static fields (static reference to `FriendListActivity.MyRecyclerAdapter` which has field `mContext` pointing to `Context`); this is a memory leak (and also breaks Instant Run)"
+        category="Performance"
+        priority="6"
+        summary="Static Field Leaks"
+        explanation="A static field will leak contexts."
+        errorLine1="    private static FriendListActivity.MyRecyclerAdapter adapter;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/fragment/ChatsFragment.java"
+            line="65"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak"
+        severity="Warning"
         message="Do not place Android context classes in static fields (static reference to `MyRecyclerAdapter` which has field `mContext` pointing to `Context`); this is a memory leak (and also breaks Instant Run)"
         category="Performance"
         priority="6"
@@ -1500,6 +1564,54 @@
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/FriendListActivity.java"
             line="125"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak"
+        severity="Warning"
+        message="Do not place Android context classes in static fields (static reference to `MyRecyclerAdapter` which has field `mContext` pointing to `Context`); this is a memory leak (and also breaks Instant Run)"
+        category="Performance"
+        priority="6"
+        summary="Static Field Leaks"
+        explanation="A static field will leak contexts."
+        errorLine1="    private static MyRecyclerAdapter adapter;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/GameMainActivity.java"
+            line="104"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak"
+        severity="Warning"
+        message="Do not place Android context classes in static fields (static reference to `MainListAdapter` which has field `mContext` pointing to `Context`); this is a memory leak (and also breaks Instant Run)"
+        category="Performance"
+        priority="6"
+        summary="Static Field Leaks"
+        explanation="A static field will leak contexts."
+        errorLine1="    private static MainListAdapter adapter;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/fragment/MainFragment.java"
+            line="57"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak"
+        severity="Warning"
+        message="Do not place Android context classes in static fields; this is a memory leak (and also breaks Instant Run)"
+        category="Performance"
+        priority="6"
+        summary="Static Field Leaks"
+        explanation="A static field will leak contexts."
+        errorLine1="    private static Context ctx;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/fragment/MainFragment.java"
+            line="62"
             column="5"/>
     </issue>
 
@@ -1692,7 +1804,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/data/Constant.java"
-            line="60"
+            line="107"
             column="17"/>
     </issue>
 
@@ -1709,7 +1821,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/data/Tools.java"
-            line="20"
+            line="31"
             column="17"/>
     </issue>
 
@@ -1728,6 +1840,23 @@
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout-w720dp/friend_details_content.xml"
             line="2"
             column="1"/>
+    </issue>
+
+    <issue
+        id="InefficientWeight"
+        severity="Warning"
+        message="Use a `layout_width` of `0dp` instead of `wrap_content` for better performance"
+        category="Performance"
+        priority="3"
+        summary="Inefficient layout weight"
+        explanation="When only a single widget in a LinearLayout defines a weight, it is more efficient to assign a width/height of `0dp` to it since it will absorb all the remaining space anyway. With a declared width/height of `0dp` it does not have to measure its own size first."
+        errorLine1="                android:layout_width=&quot;wrap_content&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_main_look.xml"
+            line="91"
+            column="17"/>
     </issue>
 
     <issue
@@ -1788,11 +1917,59 @@
         priority="3"
         summary="Overdraw: Painting regions more than once"
         explanation="If you set a background drawable on a root view, then you should use a custom theme where the theme background is null. Otherwise, the theme background will be painted first, only to have your custom background completely cover it; this is called &quot;overdraw&quot;.&#xA;&#xA;NOTE: This detector relies on figuring out which layouts are associated with which activities based on scanning the Java code, and it&apos;s currently doing that using an inexact pattern matching algorithm. Therefore, it can incorrectly conclude which activity the layout is associated with and then wrongly complain that a background-theme is hidden.&#xA;&#xA;If you want your custom background on multiple pages, then you should consider making a custom theme with your custom background and just using that theme instead of a root element background.&#xA;&#xA;Of course it&apos;s possible that your custom drawable is translucent and you want it to be mixed with the background. However, you will get better performance if you pre-mix the background with your drawable and use that resulting image or color as a custom theme background instead.&#xA;"
+        errorLine1="    android:background=&quot;@android:color/white&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_gallery.xml"
+            line="6"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        severity="Warning"
+        message="Possible overdraw: Root element paints background `@android:color/white` with a theme that also paints a background (inferred theme is `@style/AppTheme`)"
+        category="Performance"
+        priority="3"
+        summary="Overdraw: Painting regions more than once"
+        explanation="If you set a background drawable on a root view, then you should use a custom theme where the theme background is null. Otherwise, the theme background will be painted first, only to have your custom background completely cover it; this is called &quot;overdraw&quot;.&#xA;&#xA;NOTE: This detector relies on figuring out which layouts are associated with which activities based on scanning the Java code, and it&apos;s currently doing that using an inexact pattern matching algorithm. Therefore, it can incorrectly conclude which activity the layout is associated with and then wrongly complain that a background-theme is hidden.&#xA;&#xA;If you want your custom background on multiple pages, then you should consider making a custom theme with your custom background and just using that theme instead of a root element background.&#xA;&#xA;Of course it&apos;s possible that your custom drawable is translucent and you want it to be mixed with the background. However, you will get better performance if you pre-mix the background with your drawable and use that resulting image or color as a custom theme background instead.&#xA;"
+        errorLine1="    android:background=&quot;@android:color/white&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_details.xml"
+            line="6"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        severity="Warning"
+        message="Possible overdraw: Root element paints background `@android:color/white` with a theme that also paints a background (inferred theme is `@style/AppTheme`)"
+        category="Performance"
+        priority="3"
+        summary="Overdraw: Painting regions more than once"
+        explanation="If you set a background drawable on a root view, then you should use a custom theme where the theme background is null. Otherwise, the theme background will be painted first, only to have your custom background completely cover it; this is called &quot;overdraw&quot;.&#xA;&#xA;NOTE: This detector relies on figuring out which layouts are associated with which activities based on scanning the Java code, and it&apos;s currently doing that using an inexact pattern matching algorithm. Therefore, it can incorrectly conclude which activity the layout is associated with and then wrongly complain that a background-theme is hidden.&#xA;&#xA;If you want your custom background on multiple pages, then you should consider making a custom theme with your custom background and just using that theme instead of a root element background.&#xA;&#xA;Of course it&apos;s possible that your custom drawable is translucent and you want it to be mixed with the background. However, you will get better performance if you pre-mix the background with your drawable and use that resulting image or color as a custom theme background instead.&#xA;"
         errorLine1="    android:background=&quot;@android:color/white&quot;"
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_group_details.xml"
             line="5"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        severity="Warning"
+        message="Possible overdraw: Root element paints background `@android:color/white` with a theme that also paints a background (inferred theme is `@style/AppTheme`)"
+        category="Performance"
+        priority="3"
+        summary="Overdraw: Painting regions more than once"
+        explanation="If you set a background drawable on a root view, then you should use a custom theme where the theme background is null. Otherwise, the theme background will be painted first, only to have your custom background completely cover it; this is called &quot;overdraw&quot;.&#xA;&#xA;NOTE: This detector relies on figuring out which layouts are associated with which activities based on scanning the Java code, and it&apos;s currently doing that using an inexact pattern matching algorithm. Therefore, it can incorrectly conclude which activity the layout is associated with and then wrongly complain that a background-theme is hidden.&#xA;&#xA;If you want your custom background on multiple pages, then you should consider making a custom theme with your custom background and just using that theme instead of a root element background.&#xA;&#xA;Of course it&apos;s possible that your custom drawable is translucent and you want it to be mixed with the background. However, you will get better performance if you pre-mix the background with your drawable and use that resulting image or color as a custom theme background instead.&#xA;"
+        errorLine1="    android:background=&quot;@android:color/white&quot;>"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_main_look.xml"
+            line="6"
             column="5"/>
     </issue>
 
@@ -1825,6 +2002,22 @@
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_reset_password.xml"
             line="8"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        severity="Warning"
+        message="Possible overdraw: Root element paints background `@android:color/white` with a theme that also paints a background (inferred theme is `@style/AppTheme`)"
+        category="Performance"
+        priority="3"
+        summary="Overdraw: Painting regions more than once"
+        explanation="If you set a background drawable on a root view, then you should use a custom theme where the theme background is null. Otherwise, the theme background will be painted first, only to have your custom background completely cover it; this is called &quot;overdraw&quot;.&#xA;&#xA;NOTE: This detector relies on figuring out which layouts are associated with which activities based on scanning the Java code, and it&apos;s currently doing that using an inexact pattern matching algorithm. Therefore, it can incorrectly conclude which activity the layout is associated with and then wrongly complain that a background-theme is hidden.&#xA;&#xA;If you want your custom background on multiple pages, then you should consider making a custom theme with your custom background and just using that theme instead of a root element background.&#xA;&#xA;Of course it&apos;s possible that your custom drawable is translucent and you want it to be mixed with the background. However, you will get better performance if you pre-mix the background with your drawable and use that resulting image or color as a custom theme background instead.&#xA;"
+        errorLine1="    android:background=&quot;@android:color/white&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_selected_game.xml"
+            line="6"
             column="5"/>
     </issue>
 
@@ -1959,70 +2152,6 @@
     <issue
         id="UnusedResources"
         severity="Warning"
-        message="The resource `R.layout.activity_edit_info` appears to be unused"
-        category="Performance"
-        priority="3"
-        summary="Unused resources"
-        explanation="Unused resources make applications larger and slow down builds."
-        errorLine1="&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
-        errorLine2="^"
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_edit_info.xml"
-            line="2"
-            column="1"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        severity="Warning"
-        message="The resource `R.layout.activity_gallery` appears to be unused"
-        category="Performance"
-        priority="3"
-        summary="Unused resources"
-        explanation="Unused resources make applications larger and slow down builds."
-        errorLine1="&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
-        errorLine2="^"
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_gallery.xml"
-            line="2"
-            column="1"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        severity="Warning"
-        message="The resource `R.layout.activity_game_main` appears to be unused"
-        category="Performance"
-        priority="3"
-        summary="Unused resources"
-        explanation="Unused resources make applications larger and slow down builds."
-        errorLine1="&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
-        errorLine2="^"
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_main.xml"
-            line="2"
-            column="1"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        severity="Warning"
-        message="The resource `R.drawable.bg_form2` appears to be unused"
-        category="Performance"
-        priority="3"
-        summary="Unused resources"
-        explanation="Unused resources make applications larger and slow down builds."
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/bg_form2.png"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        severity="Warning"
         message="The resource `R.drawable.cat` appears to be unused"
         category="Performance"
         priority="3"
@@ -2031,6 +2160,210 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/cat.gif"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.black` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name = &quot;black&quot;>#000&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
+            line="6"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.grey_dark` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;grey_dark&quot;>#262626&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
+            line="7"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.tab_indicator_color` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;tab_indicator_color&quot;>#FFFFFF&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
+            line="9"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.bg_bottom_menu` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;bg_bottom_menu&quot;>#f2f2f2&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
+            line="10"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.darkOverlay` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;darkOverlay&quot;>#80000000&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
+            line="12"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.darkOverlaySoft` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;darkOverlaySoft&quot;>#40000000&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
+            line="13"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.whiteOverlay` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;whiteOverlay&quot;>#40FFFFFF&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
+            line="14"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.bt_add_color` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;bt_add_color&quot;>#49a6e9&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
+            line="16"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.bg_screen1` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;bg_screen1&quot;>#8955D1&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
+            line="19"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.bg_screen2` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;bg_screen2&quot;>#FDA52A&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
+            line="20"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.bg_screen3` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;bg_screen3&quot;>#07B2DD&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
+            line="21"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.bg_screen4` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;color name=&quot;bg_screen4&quot;>#50A50A&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
+            line="22"
+            column="12"/>
     </issue>
 
     <issue
@@ -2046,7 +2379,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="7"
+            line="28"
             column="12"/>
     </issue>
 
@@ -2063,7 +2396,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="10"
+            line="31"
             column="12"/>
     </issue>
 
@@ -2080,7 +2413,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="12"
+            line="33"
             column="12"/>
     </issue>
 
@@ -2097,7 +2430,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="14"
+            line="35"
             column="12"/>
     </issue>
 
@@ -2114,7 +2447,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="16"
+            line="37"
             column="12"/>
     </issue>
 
@@ -2131,7 +2464,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="18"
+            line="39"
             column="12"/>
     </issue>
 
@@ -2148,7 +2481,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="20"
+            line="41"
             column="12"/>
     </issue>
 
@@ -2165,7 +2498,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="34"
+            line="55"
             column="12"/>
     </issue>
 
@@ -2182,24 +2515,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="35"
-            column="12"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        severity="Warning"
-        message="The resource `R.color.bg_main` appears to be unused"
-        category="Performance"
-        priority="3"
-        summary="Unused resources"
-        explanation="Unused resources make applications larger and slow down builds."
-        errorLine1="    &lt;color name=&quot;bg_main&quot;>#428bca&lt;/color>"
-        errorLine2="           ~~~~~~~~~~~~~~"
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="36"
+            line="56"
             column="12"/>
     </issue>
 
@@ -2216,7 +2532,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="37"
+            line="58"
             column="12"/>
     </issue>
 
@@ -2233,7 +2549,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="38"
+            line="59"
             column="12"/>
     </issue>
 
@@ -2250,7 +2566,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="39"
+            line="60"
             column="12"/>
     </issue>
 
@@ -2267,7 +2583,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="40"
+            line="61"
             column="12"/>
     </issue>
 
@@ -2284,7 +2600,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="41"
+            line="62"
             column="12"/>
     </issue>
 
@@ -2301,7 +2617,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="42"
+            line="63"
             column="12"/>
     </issue>
 
@@ -2318,7 +2634,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="43"
+            line="64"
             column="12"/>
     </issue>
 
@@ -2335,7 +2651,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="44"
+            line="65"
             column="12"/>
     </issue>
 
@@ -2352,7 +2668,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="45"
+            line="66"
             column="12"/>
     </issue>
 
@@ -2369,7 +2685,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/colors.xml"
-            line="46"
+            line="67"
             column="12"/>
     </issue>
 
@@ -2399,7 +2715,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/dimens.xml"
-            line="5"
+            line="9"
             column="12"/>
     </issue>
 
@@ -2416,7 +2732,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/dimens.xml"
-            line="6"
+            line="10"
             column="12"/>
     </issue>
 
@@ -2433,24 +2749,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/dimens.xml"
-            line="8"
-            column="12"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        severity="Warning"
-        message="The resource `R.dimen.spacing_xlarge` appears to be unused"
-        category="Performance"
-        priority="3"
-        summary="Unused resources"
-        explanation="Unused resources make applications larger and slow down builds."
-        errorLine1="    &lt;dimen name=&quot;spacing_xlarge&quot;>32dp&lt;/dimen>"
-        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~"
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/dimens.xml"
-            line="14"
+            line="12"
             column="12"/>
     </issue>
 
@@ -2467,7 +2766,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/dimens.xml"
-            line="16"
+            line="20"
             column="12"/>
     </issue>
 
@@ -2484,7 +2783,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/dimens.xml"
-            line="17"
+            line="21"
             column="12"/>
     </issue>
 
@@ -2501,7 +2800,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/dimens.xml"
-            line="19"
+            line="23"
             column="12"/>
     </issue>
 
@@ -2518,24 +2817,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/dimens.xml"
-            line="26"
-            column="12"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        severity="Warning"
-        message="The resource `R.dimen.spacing_xxlarge` appears to be unused"
-        category="Performance"
-        priority="3"
-        summary="Unused resources"
-        explanation="Unused resources make applications larger and slow down builds."
-        errorLine1="    &lt;dimen name=&quot;spacing_xxlarge&quot;>40dp&lt;/dimen>"
-        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~"
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/dimens.xml"
-            line="32"
+            line="30"
             column="12"/>
     </issue>
 
@@ -2568,32 +2850,6 @@
     <issue
         id="UnusedResources"
         severity="Warning"
-        message="The resource `R.drawable.ic_form_lock` appears to be unused"
-        category="Performance"
-        priority="3"
-        summary="Unused resources"
-        explanation="Unused resources make applications larger and slow down builds."
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/ic_form_lock.png"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        severity="Warning"
-        message="The resource `R.drawable.ic_form_people` appears to be unused"
-        category="Performance"
-        priority="3"
-        summary="Unused resources"
-        explanation="Unused resources make applications larger and slow down builds."
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/ic_form_people.png"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        severity="Warning"
         message="The resource `R.drawable.ic_logo_white` appears to be unused"
         category="Performance"
         priority="3"
@@ -2607,6 +2863,97 @@
     <issue
         id="UnusedResources"
         severity="Warning"
+        message="The resource `R.drawable.ic_logo_white1` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/ic_logo_white1.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_menu_direct` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/ic_menu_direct.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_menu_grid` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/ic_menu_grid.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_menu_list` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/ic_menu_list.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_menu_new_friend` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/ic_menu_new_friend.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_menu_places` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/ic_menu_places.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_menu_tags` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/ic_menu_tags.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
         message="The resource `R.drawable.ic_notif` appears to be unused"
         category="Performance"
         priority="3"
@@ -2615,23 +2962,6 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/ic_notif.png"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        severity="Warning"
-        message="The resource `R.layout.item_lobby_friend` appears to be unused"
-        category="Performance"
-        priority="3"
-        summary="Unused resources"
-        explanation="Unused resources make applications larger and slow down builds."
-        errorLine1="&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
-        errorLine2="^"
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/item_lobby_friend.xml"
-            line="2"
-            column="1"/>
     </issue>
 
     <issue
@@ -2654,36 +2984,6 @@
     <issue
         id="UnusedResources"
         severity="Warning"
-        message="The resource `R.drawable.logo` appears to be unused"
-        category="Performance"
-        priority="3"
-        summary="Unused resources"
-        explanation="Unused resources make applications larger and slow down builds."
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/logo.png"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        severity="Warning"
-        message="The resource `R.menu.menu_main` appears to be unused"
-        category="Performance"
-        priority="3"
-        summary="Unused resources"
-        explanation="Unused resources make applications larger and slow down builds."
-        errorLine1="&lt;menu xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
-        errorLine2="^"
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/menu/menu_main.xml"
-            line="1"
-            column="1"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        severity="Warning"
         message="The resource `R.menu.menu_search_toolbar` appears to be unused"
         category="Performance"
         priority="3"
@@ -2696,19 +2996,6 @@
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/menu/menu_search_toolbar.xml"
             line="2"
             column="1"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        severity="Warning"
-        message="The resource `R.drawable.name_logo` appears to be unused"
-        category="Performance"
-        priority="3"
-        summary="Unused resources"
-        explanation="Unused resources make applications larger and slow down builds."
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/name_logo.png"/>
     </issue>
 
     <issue
@@ -2750,7 +3037,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/string-data.xml"
-            line="5"
+            line="66"
             column="13"/>
     </issue>
 
@@ -2767,7 +3054,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/string-data.xml"
-            line="6"
+            line="67"
             column="13"/>
     </issue>
 
@@ -2784,7 +3071,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/string-data.xml"
-            line="7"
+            line="68"
             column="13"/>
     </issue>
 
@@ -2801,7 +3088,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/string-data.xml"
-            line="8"
+            line="69"
             column="13"/>
     </issue>
 
@@ -2818,7 +3105,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/string-data.xml"
-            line="10"
+            line="71"
             column="13"/>
     </issue>
 
@@ -2835,7 +3122,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/string-data.xml"
-            line="11"
+            line="72"
             column="13"/>
     </issue>
 
@@ -2852,7 +3139,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/string-data.xml"
-            line="12"
+            line="73"
             column="13"/>
     </issue>
 
@@ -2869,7 +3156,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/string-data.xml"
-            line="13"
+            line="74"
             column="13"/>
     </issue>
 
@@ -2988,7 +3275,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/strings.xml"
-            line="51"
+            line="53"
             column="13"/>
     </issue>
 
@@ -3005,7 +3292,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/strings.xml"
-            line="56"
+            line="58"
             column="13"/>
     </issue>
 
@@ -3022,7 +3309,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/strings.xml"
-            line="80"
+            line="81"
             column="13"/>
     </issue>
 
@@ -3039,7 +3326,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/strings.xml"
-            line="81"
+            line="82"
             column="13"/>
     </issue>
 
@@ -3056,7 +3343,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/strings.xml"
-            line="82"
+            line="83"
             column="13"/>
     </issue>
 
@@ -3073,7 +3360,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/strings.xml"
-            line="83"
+            line="84"
             column="13"/>
     </issue>
 
@@ -3090,7 +3377,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/strings.xml"
-            line="84"
+            line="85"
             column="13"/>
     </issue>
 
@@ -3107,7 +3394,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/strings.xml"
-            line="85"
+            line="86"
             column="13"/>
     </issue>
 
@@ -3124,7 +3411,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/strings.xml"
-            line="86"
+            line="87"
             column="13"/>
     </issue>
 
@@ -3141,7 +3428,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/strings.xml"
-            line="87"
+            line="88"
             column="13"/>
     </issue>
 
@@ -3158,7 +3445,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/strings.xml"
-            line="88"
+            line="89"
             column="13"/>
     </issue>
 
@@ -3175,7 +3462,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/strings.xml"
-            line="89"
+            line="90"
             column="13"/>
     </issue>
 
@@ -3192,7 +3479,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/strings.xml"
-            line="90"
+            line="91"
             column="13"/>
     </issue>
 
@@ -3209,7 +3496,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/strings.xml"
-            line="91"
+            line="92"
             column="13"/>
     </issue>
 
@@ -3226,7 +3513,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/strings.xml"
-            line="92"
+            line="93"
             column="13"/>
     </issue>
 
@@ -3243,7 +3530,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/strings.xml"
-            line="93"
+            line="94"
             column="13"/>
     </issue>
 
@@ -3260,7 +3547,7 @@
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/strings.xml"
-            line="95"
+            line="96"
             column="13"/>
     </issue>
 
@@ -3278,40 +3565,6 @@
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/styles.xml"
             line="39"
-            column="12"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        severity="Warning"
-        message="The resource `R.style.RippleStyleWhite` appears to be unused"
-        category="Performance"
-        priority="3"
-        summary="Unused resources"
-        explanation="Unused resources make applications larger and slow down builds."
-        errorLine1="    &lt;style name=&quot;RippleStyleWhite&quot;>"
-        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~"
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/styles.xml"
-            line="83"
-            column="12"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        severity="Warning"
-        message="The resource `R.style.RippleStyleBlack` appears to be unused"
-        category="Performance"
-        priority="3"
-        summary="Unused resources"
-        explanation="Unused resources make applications larger and slow down builds."
-        errorLine1="    &lt;style name=&quot;RippleStyleBlack&quot; parent=&quot;RippleStyleWhite&quot;>"
-        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~"
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/values/styles.xml"
-            line="90"
             column="12"/>
     </issue>
 
@@ -3363,6 +3616,36 @@
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/toolbar_gradient.xml"
             line="1"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.user` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/user.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.user_stats` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/user_stats.xml"
+            line="2"
             column="1"/>
     </issue>
 
@@ -3561,6 +3844,356 @@
         urls="http://developer.android.com/guide/practices/screens_support.html">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/drawer_header.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_1.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_1.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_10.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_10.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_11.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_11.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_12.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_12.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_13.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_13.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_14.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_14.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_15.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_15.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_16.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_16.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_17.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_17.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_18.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_18.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_19.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_19.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_2.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_2.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_20.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_20.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_21.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_21.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_22.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_22.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_23.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_23.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_24.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_24.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_25.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_25.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_3.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_3.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_4.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_4.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_5.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_5.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_6.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_6.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_7.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_7.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_8.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_8.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/feed_photo_9.jpg` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/feed_photo_9.jpg"/>
     </issue>
 
     <issue
@@ -3832,6 +4465,76 @@
     <issue
         id="IconLocation"
         severity="Warning"
+        message="Found bitmap drawable `res/drawable/ic_menu_direct.png` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/ic_menu_direct.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/ic_menu_grid.png` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/ic_menu_grid.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/ic_menu_list.png` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/ic_menu_list.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/ic_menu_new_friend.png` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/ic_menu_new_friend.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/ic_menu_places.png` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/ic_menu_places.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
         message="Found bitmap drawable `res/drawable/ic_menu_search.png` in densityless folder"
         category="Usability:Icons"
         priority="5"
@@ -3841,6 +4544,20 @@
         urls="http://developer.android.com/guide/practices/screens_support.html">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/ic_menu_search.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        severity="Warning"
+        message="Found bitmap drawable `res/drawable/ic_menu_tags.png` in densityless folder"
+        category="Usability:Icons"
+        priority="5"
+        summary="Image defined in density-independent drawable folder"
+        explanation="The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to `drawable-mdpi` and consider providing higher and lower resolution versions in `drawable-ldpi`, `drawable-hdpi` and `drawable-xhdpi`. If the icon *really* is density independent (for example a solid color) you can place it in `drawable-nodpi`."
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/drawable/ic_menu_tags.png"/>
     </issue>
 
     <issue
@@ -4271,6 +4988,27 @@
     <issue
         id="TextFields"
         severity="Warning"
+        message="The view name (`@+id/input_password`) suggests this is a password, but it does not include &apos;`textPassword`&apos; in the `inputType`"
+        category="Usability"
+        priority="5"
+        summary="Missing `inputType` or `hint`"
+        explanation="Providing an `inputType` attribute on a text field improves usability because depending on the data to be input, optimized keyboards can be shown to the user (such as just digits and parentheses for a phone number). Similarly,a hint attribute displays a hint to the user for what is expected in the text field.&#xA;&#xA;The lint detector also looks at the `id` of the view, and if the id offers a hint of the purpose of the field (for example, the `id` contains the phrase `phone` or `email`), then lint will also ensure that the `inputType` contains the corresponding type attributes.&#xA;&#xA;If you really want to keep the text field generic, you can suppress this warning by setting `inputType=&quot;text&quot;`."
+        errorLine1="                        android:inputType=&quot;text&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_edit_info.xml"
+            line="94"
+            column="25"/>
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_edit_info.xml"
+            line="88"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        severity="Warning"
         message="This text field does not specify an `inputType` or a `hint`"
         category="Usability"
         priority="5"
@@ -4313,8 +5051,8 @@
         errorLine1="        android:textSize=&quot;8sp&quot; />"
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_main_look.xml"
-            line="106"
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/user_stats.xml"
+            line="101"
             column="9"/>
     </issue>
 
@@ -4455,30 +5193,13 @@
         priority="3"
         summary="Image without `contentDescription`"
         explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.&#xA;&#xA;Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.&#xA;&#xA;Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
-        errorLine1="    &lt;ImageView"
-        errorLine2="    ^"
+        errorLine1="        &lt;ImageView"
+        errorLine2="        ^"
         quickfix="studio">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_main_look.xml"
-            line="57"
-            column="5"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        severity="Warning"
-        message="[Accessibility] Missing `contentDescription` attribute on image"
-        category="Accessibility"
-        priority="3"
-        summary="Image without `contentDescription`"
-        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.&#xA;&#xA;Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.&#xA;&#xA;Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
-        errorLine1="    &lt;ImageView"
-        errorLine2="    ^"
-        quickfix="studio">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_main_look.xml"
-            line="109"
-            column="5"/>
+            line="15"
+            column="9"/>
     </issue>
 
     <issue
@@ -4496,6 +5217,23 @@
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_reset_password.xml"
             line="21"
             column="9"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="[Accessibility] Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.&#xA;&#xA;Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.&#xA;&#xA;Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
+        errorLine1="    &lt;ImageView"
+        errorLine2="    ^"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_selected_game.xml"
+            line="11"
+            column="5"/>
     </issue>
 
     <issue
@@ -4659,6 +5397,23 @@
         priority="3"
         summary="Image without `contentDescription`"
         explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.&#xA;&#xA;Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.&#xA;&#xA;Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
+        errorLine1="        &lt;ImageView"
+        errorLine2="        ^"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/item_grid_gallery.xml"
+            line="16"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="[Accessibility] Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.&#xA;&#xA;Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.&#xA;&#xA;Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
         errorLine1="    &lt;ImageView"
         errorLine2="    ^"
         quickfix="studio">
@@ -4771,6 +5526,40 @@
     </issue>
 
     <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="[Accessibility] Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.&#xA;&#xA;Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.&#xA;&#xA;Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
+        errorLine1="    &lt;ImageView"
+        errorLine2="    ^"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/user_stats.xml"
+            line="53"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="[Accessibility] Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.&#xA;&#xA;Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, just suppress the lint warning with a tools:ignore=&quot;ContentDescription&quot; attribute.&#xA;&#xA;Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`. See http://developer.android.com/guide/topics/ui/accessibility/checklist.html#special-cases."
+        errorLine1="    &lt;ImageView"
+        errorLine2="    ^"
+        quickfix="studio">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/user_stats.xml"
+            line="104"
+            column="5"/>
+    </issue>
+
+    <issue
         id="LabelFor"
         severity="Warning"
         message="No label views point to this text field with an `android:labelFor=&quot;@+id/messageEditText&quot;` attribute"
@@ -4812,11 +5601,47 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="http://developer.android.com/guide/topics/resources/localization.html"
         urls="http://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="                        displayName.setText(&quot;Please set Display Name&quot;);"
+        errorLine1="                        input_username.setText(&quot;Please set Display Name&quot;);"
+        errorLine2="                                               ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/ActivityEditInfo.java"
+            line="113"
+            column="48"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="http://developer.android.com/guide/topics/resources/localization.html"
+        urls="http://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                    randomView.setText(word + list.toString());"
+        errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/ActivityGameDetails.java"
+            line="193"
+            column="40"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="http://developer.android.com/guide/topics/resources/localization.html"
+        urls="http://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                        displayName.setText(&quot;Please set Display Name&quot;);"
         errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/MainActivity.java"
-            line="105"
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/ActivityMain.java"
+            line="195"
             column="45"/>
     </issue>
 
@@ -4833,9 +5658,45 @@
         errorLine1="                        displayName.setText(&quot;Please set Display Name&quot;);"
         errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/fragment/MainFragment.java"
-            line="157"
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/MainActivity.java"
+            line="101"
             column="45"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="http://developer.android.com/guide/topics/resources/localization.html"
+        urls="http://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            holder.content.setText(&quot;Chair Table Person&quot;);"
+        errorLine2="                                   ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/adapter/MainListAdapter.java"
+            line="95"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="http://developer.android.com/guide/topics/resources/localization.html"
+        urls="http://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            holder.content.setText(&quot;Chair, Person, Laptop&quot;);"
+        errorLine2="                                   ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/adapter/MainListAdapter.java"
+            line="100"
+            column="36"/>
     </issue>
 
     <issue
@@ -4888,7 +5749,7 @@
         errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/cameraActivity.java"
-            line="95"
+            line="199"
             column="26"/>
     </issue>
 
@@ -4906,7 +5767,7 @@
         errorLine2="                                     ~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/gameRoomActivity.java"
-            line="234"
+            line="243"
             column="38"/>
     </issue>
 
@@ -4924,7 +5785,7 @@
         errorLine2="                                       ~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/gameRoomActivity.java"
-            line="363"
+            line="364"
             column="40"/>
     </issue>
 
@@ -4956,7 +5817,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_chat_details.xml"
-            line="34"
+            line="35"
             column="13"/>
     </issue>
 
@@ -4972,7 +5833,7 @@
         errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_chat_details.xml"
-            line="64"
+            line="65"
             column="17"/>
     </issue>
 
@@ -4988,7 +5849,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_chat_details.xml"
-            line="78"
+            line="79"
             column="13"/>
     </issue>
 
@@ -5020,40 +5881,104 @@
         errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_edit_info.xml"
-            line="92"
+            line="93"
             column="25"/>
     </issue>
 
     <issue
         id="HardcodedText"
         severity="Warning"
-        message="[I18N] Hardcoded string &quot;LOGIN&quot;, should use `@string` resource"
+        message="[I18N] Hardcoded string &quot;CHANGE&quot;, should use `@string` resource"
         category="Internationalization"
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                    android:text=&quot;LOGIN&quot; />"
-        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="                    android:text=&quot;CHANGE&quot; />"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_edit_info.xml"
-            line="124"
+            line="125"
             column="21"/>
     </issue>
 
     <issue
         id="HardcodedText"
         severity="Warning"
-        message="[I18N] Hardcoded string &quot;REGISTER&quot;, should use `@string` resource"
+        message="[I18N] Hardcoded string &quot;Easy&quot;, should use `@string` resource"
         category="Internationalization"
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                android:text=&quot;REGISTER&quot;"
-        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="            android:text=&quot;Easy&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_edit_info.xml"
-            line="133"
-            column="17"/>
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_details.xml"
+            line="25"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Hard&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="            android:text=&quot;Hard&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_details.xml"
+            line="33"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;-&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;-&quot; />"
+        errorLine2="        ~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_details.xml"
+            line="45"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Generate&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;Generate&quot; />"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_details.xml"
+            line="56"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Challenge&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;Challenge&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_details.xml"
+            line="67"
+            column="9"/>
     </issue>
 
     <issue
@@ -5100,7 +6025,7 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_room.xml"
-            line="18"
+            line="20"
             column="9"/>
     </issue>
 
@@ -5116,39 +6041,7 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_room.xml"
-            line="28"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="[I18N] Hardcoded string &quot;Challenge&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;Challenge&quot; />"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_room.xml"
-            line="53"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="[I18N] Hardcoded string &quot;Generate&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;Generate&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_room.xml"
-            line="56"
+            line="30"
             column="9"/>
     </issue>
 
@@ -5164,23 +6057,7 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_room.xml"
-            line="73"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="[I18N] Hardcoded string &quot;Create Game&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;Create Game&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_room.xml"
-            line="76"
+            line="53"
             column="9"/>
     </issue>
 
@@ -5196,7 +6073,55 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_room.xml"
-            line="94"
+            line="63"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Challenge&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;Challenge&quot; />"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_room.xml"
+            line="75"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Generate&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;Generate&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_room.xml"
+            line="78"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Create Game&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;Create Game&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_room.xml"
+            line="88"
             column="9"/>
     </issue>
 
@@ -5212,7 +6137,7 @@
         errorLine2="        ~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_room.xml"
-            line="103"
+            line="107"
             column="9"/>
     </issue>
 
@@ -5228,7 +6153,7 @@
         errorLine2="        ~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_room.xml"
-            line="112"
+            line="116"
             column="9"/>
     </issue>
 
@@ -5244,7 +6169,7 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_game_room.xml"
-            line="119"
+            line="123"
             column="9"/>
     </issue>
 
@@ -5363,177 +6288,17 @@
     <issue
         id="HardcodedText"
         severity="Warning"
-        message="[I18N] Hardcoded string &quot;Look for Things&quot;, should use `@string` resource"
+        message="[I18N] Hardcoded string &quot;New Game&quot;, should use `@string` resource"
         category="Internationalization"
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;Look for Things&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="                android:text=&quot;New Game&quot; />"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_main_look.xml"
-            line="34"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="[I18N] Hardcoded string &quot;Chat&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;Chat&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_main_look.xml"
-            line="44"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="[I18N] Hardcoded string &quot;Gallery&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;Gallery&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_main_look.xml"
-            line="53"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="[I18N] Hardcoded string &quot;Games: 10&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;Games: 10&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_main_look.xml"
-            line="70"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="[I18N] Hardcoded string &quot;W/L ratio: 0.3&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;W/L ratio: 0.3&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_main_look.xml"
-            line="80"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="[I18N] Hardcoded string &quot;Pending: 2&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;Pending: 2&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_main_look.xml"
-            line="89"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="[I18N] Hardcoded string &quot;Stats&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;Stats&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_main_look.xml"
-            line="98"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="[I18N] Hardcoded string &quot;Play&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;Play&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_main_look.xml"
-            line="124"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="[I18N] Hardcoded string &quot;Last Picture Taken&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;Last Picture Taken&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_main_look.xml"
-            line="128"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="[I18N] Hardcoded string &quot;Data Coll.&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;Data Coll.&quot; />"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_main_look.xml"
-            line="142"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="[I18N] Hardcoded string &quot;HolderText&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;HolderText&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_main_look.xml"
-            line="148"
-            column="9"/>
+            line="95"
+            column="17"/>
     </issue>
 
     <issue
@@ -5613,6 +6378,86 @@
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_pmchat.xml"
             line="52"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Opponent : &quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="            android:text=&quot;Opponent : &quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_selected_game.xml"
+            line="35"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Opponent Name&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="            android:text=&quot;Opponent Name&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_selected_game.xml"
+            line="42"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Opponent Words Left : &quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="            android:text=&quot;Opponent Words Left : &quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_selected_game.xml"
+            line="58"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;My Words Left : &quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="            android:text=&quot;My Words Left : &quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_selected_game.xml"
+            line="81"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Fight&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;Fight&quot; />"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_selected_game.xml"
+            line="102"
             column="9"/>
     </issue>
 
@@ -6163,6 +7008,22 @@
     <issue
         id="HardcodedText"
         severity="Warning"
+        message="[I18N] Hardcoded string &quot;Data Collection&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                android:title=&quot;Data Collection&quot; />"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/menu/menu_drawer.xml"
+            line="20"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
         message="[I18N] Hardcoded string &quot;Delete Account&quot;, should use `@string` resource"
         category="Internationalization"
         priority="5"
@@ -6172,7 +7033,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/menu/menu_drawer.xml"
-            line="20"
+            line="24"
             column="13"/>
     </issue>
 
@@ -6188,7 +7049,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/menu/menu_drawer.xml"
-            line="24"
+            line="28"
             column="13"/>
     </issue>
 
@@ -6221,38 +7082,6 @@
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/menu/menu_group_details.xml"
             line="8"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="[I18N] Hardcoded string &quot;Refresh&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:title=&quot;Refresh&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/menu/menu_main.xml"
-            line="6"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="HardcodedText"
-        severity="Warning"
-        message="[I18N] Hardcoded string &quot;Notifications&quot;, should use `@string` resource"
-        category="Internationalization"
-        priority="5"
-        summary="Hardcoded text"
-        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:title=&quot;Notifications&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/menu/menu_main.xml"
-            line="12"
             column="9"/>
     </issue>
 
@@ -6529,6 +7358,182 @@
     </issue>
 
     <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Look for Things&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;Look for Things&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/user_stats.xml"
+            line="27"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Chat&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;Chat&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/user_stats.xml"
+            line="37"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Gallery&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;Gallery&quot; />"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/user_stats.xml"
+            line="50"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Games: 10&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;Games: 10&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/user_stats.xml"
+            line="66"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;W/L ratio: 0.3&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;W/L ratio: 0.3&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/user_stats.xml"
+            line="75"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Pending: 2&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;Pending: 2&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/user_stats.xml"
+            line="84"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Stats&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;Stats&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/user_stats.xml"
+            line="93"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Play&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;Play&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/user_stats.xml"
+            line="114"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Last Picture Taken&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;Last Picture Taken&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/user_stats.xml"
+            line="122"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;Data Coll.&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;Data Coll.&quot; />"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/user_stats.xml"
+            line="136"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="[I18N] Hardcoded string &quot;HolderText&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="        android:text=&quot;HolderText&quot; />"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/user_stats.xml"
+            line="145"
+            column="9"/>
+    </issue>
+
+    <issue
         id="RtlSymmetry"
         severity="Warning"
         message="When you define `paddingLeft` you should probably also define `paddingRight` for right-to-left symmetry"
@@ -6600,11 +7605,43 @@
         priority="5"
         summary="Using left/right instead of start/end attributes"
         explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.&#xA;&#xA;For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.&#xA;&#xA;(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="                    holder.lyt_parent.setGravity(Gravity.RIGHT);"
+        errorLine2="                                                         ~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/ActivityChatDetails.java"
+            line="219"
+            column="58"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Use &quot;`Gravity.START`&quot; instead of &quot;`Gravity.LEFT`&quot; to ensure correct behavior in right-to-left locales"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.&#xA;&#xA;For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.&#xA;&#xA;(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="                    holder.lyt_parent.setGravity(Gravity.LEFT);"
+        errorLine2="                                                         ~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/ActivityChatDetails.java"
+            line="223"
+            column="58"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Use &quot;`Gravity.END`&quot; instead of &quot;`Gravity.RIGHT`&quot; to ensure correct behavior in right-to-left locales"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.&#xA;&#xA;For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.&#xA;&#xA;(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
         errorLine1="   holder.lyt_parent.setGravity(Gravity.RIGHT);"
         errorLine2="                                        ~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/adapter/ChatDetailsListAdapter.java"
-            line="68"
+            line="80"
             column="41"/>
     </issue>
 
@@ -6620,7 +7657,7 @@
         errorLine2="                                        ~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/java/me/cchiang/lookforthings/adapter/ChatDetailsListAdapter.java"
-            line="72"
+            line="84"
             column="41"/>
     </issue>
 
@@ -6668,7 +7705,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_chat_details.xml"
-            line="55"
+            line="56"
             column="13"/>
     </issue>
 
@@ -6684,7 +7721,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_chat_details.xml"
-            line="73"
+            line="74"
             column="13"/>
     </issue>
 
@@ -6750,6 +7787,54 @@
             file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_group_details.xml"
             line="73"
             column="13"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;10dp&quot;` to better support right-to-left layouts"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.&#xA;&#xA;For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.&#xA;&#xA;(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="        android:layout_marginLeft=&quot;10dp&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_selected_game.xml"
+            line="26"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;10dp&quot;` to better support right-to-left layouts"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.&#xA;&#xA;For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.&#xA;&#xA;(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="        android:layout_marginLeft=&quot;10dp&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_selected_game.xml"
+            line="49"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        severity="Warning"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;10dp&quot;` to better support right-to-left layouts"
+        category="Internationalization:Bidirectional Text"
+        priority="5"
+        summary="Using left/right instead of start/end attributes"
+        explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.&#xA;&#xA;For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.&#xA;&#xA;(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
+        errorLine1="        android:layout_marginLeft=&quot;10dp&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/btholmes/Documents/github/gitlab/LookForThings2.0/app/src/main/res/layout/activity_selected_game.xml"
+            line="72"
+            column="9"/>
     </issue>
 
     <issue

@@ -1,5 +1,6 @@
 package me.cchiang.lookforthings;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -12,8 +13,19 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import me.cchiang.lookforthings.adapter.FriendsListAdapter;
-import me.cchiang.lookforthings.data.Constant;
 import me.cchiang.lookforthings.data.Tools;
 import me.cchiang.lookforthings.model.Friend;
 import me.cchiang.lookforthings.widget.DividerItemDecoration;
@@ -24,29 +36,77 @@ public class ActivitySelectFriend extends AppCompatActivity {
     private RecyclerView recyclerView;
     private FriendsListAdapter mAdapter;
     private SearchView search;
+    private DatabaseReference mFirebaseDatabaseReference;
+    private FirebaseUser currentUser;
+    private List<Friend> items = new ArrayList<>();
+    private Context ctx;
+    private View parent_view;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(me.cchiang.lookforthings.R.layout.activity_new_chat);
+//        parent_view = findViewById(R.id.main_content);
+
         initToolbar();
         initComponent();
-        // specify an adapter (see also next example)
-        mAdapter = new FriendsListAdapter(this, Constant.getFriendsData(this));
-        recyclerView.setAdapter(mAdapter);
-        mAdapter.setOnItemClickListener(new FriendsListAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View v, Friend obj, int position) {
-                ActivityChatDetails.navigate(ActivitySelectFriend.this, v.findViewById(me.cchiang.lookforthings.R.id.lyt_parent), obj, null);
-            }
-        });
+
+        populateFriends();
 
         // for system bar in lollipop
         Tools.systemBarLolipop(this);
 	}
 
+    private void populateFriends() {
+
+        final Query ref = mFirebaseDatabaseReference.child("userList");
+        ref.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
+                User user = dataSnapshot.getValue(User.class);
+
+                if(user != null){
+                    Friend friend = new Friend(user);
+                    items.add(friend);
+                }
+
+
+                mAdapter = new FriendsListAdapter(ctx, items);
+                recyclerView.setAdapter(mAdapter);
+                mAdapter.setOnItemClickListener(new FriendsListAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View v, Friend obj, int position) {
+                        addFriend(obj);
+//                        ActivityChatDetails.navigate(ActivitySelectFriend.this, v.findViewById(me.cchiang.lookforthings.R.id.lyt_parent), obj, null, "", "");
+                    }
+                });
+            }
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {}
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {}
+
+            @Override
+            public void onCancelled(DatabaseError error) {}
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {}
+        });
+    }
+
+    public void addFriend(Friend obj){
+        if(obj != null){
+            mFirebaseDatabaseReference.child("userFriendList").child(currentUser.getUid()).child(obj.getUid()).setValue(obj.getUid());
+        }
+//        Snackbar.make(parent_view, "Add Friend Clicked", Snackbar.LENGTH_SHORT).show();
+    }
+
     private void initComponent() {
         recyclerView = (RecyclerView) findViewById(me.cchiang.lookforthings.R.id.recyclerView);
+        mFirebaseDatabaseReference = FirebaseDatabase.getInstance().getReference();
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        ctx = getApplicationContext();
         
         // use a linear layout manager
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
@@ -61,7 +121,9 @@ public class ActivitySelectFriend extends AppCompatActivity {
         actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
-        actionBar.setSubtitle(Constant.getFriendsData(this).size()+" friends");
+        if(mAdapter != null){
+            actionBar.setSubtitle(mAdapter.getItemCount()+" friends");
+        }
     }
 
 	@Override
@@ -78,8 +140,12 @@ public class ActivitySelectFriend extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String s) {
-                mAdapter.getFilter().filter(s);
-                return true;
+                if(mAdapter != null){
+                    mAdapter.getFilter().filter(s);
+                    return true;
+                }else{
+                    return false;
+                }
             }
         });
         search.onActionViewCollapsed();
@@ -100,4 +166,6 @@ public class ActivitySelectFriend extends AppCompatActivity {
         }
         return false;
     }
+
+
 }
